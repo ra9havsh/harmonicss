@@ -494,7 +494,6 @@ def homepage(request):
     # json_file = open(file)
     # results = json.load(json_file)
     # json_file.close()
-    #
     # cohort_list=results["cohort"]["term-JA"]
     # personJA=results["person-JA"]
     #
@@ -512,7 +511,7 @@ def homepage(request):
 
             try:
                 driver.get(url)
-                element = WebDriverWait(driver, 30).until(
+                element = WebDriverWait(driver, 50).until(
                     EC.presence_of_element_located((By.TAG_NAME, "pre"))
                 )
 
@@ -521,7 +520,14 @@ def homepage(request):
                 except NoSuchElementException:
                     pre_tag = type('obj', (object,), {'text' : ''})
 
-                print(pre_tag.text)
+                data=pre_tag.text
+                results = json.loads(data)
+                print(results)
+                cohort_list=results["cohort"]["term-JA"]
+                personJA=results["person-JA"]
+
+                cohort(cohort_list)
+                person_JA(personJA)
                 driver.quit()
             except TimeoutException and WebDriverException:
                 return redirect("transfer:message",'error')
