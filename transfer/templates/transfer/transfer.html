@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    {% load static %}
+    {% load bootstrap4 %}
+    <meta charset="UTF-8">
+    <title>Transfer</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'transfer/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+</head>
+<body>
+<nav class="navbar">
+  <h1 class="navbar-brand">Harmonicss</h1>
+</nav>
+<div class="col-sm-6 m-auto">
+    {% if error %}
+    <h1 style="color:red">{{ error }}</h1>
+    {% endif %}
+
+    {% if success %}
+    <h1 style="color:green">{{ success }}</h1>
+    {% endif %}
+</div>
+<div class="col-sm-6 m-auto">
+    <a href="{% url 'transfer:homepage' %}" class="back">Go Back</a>
+</div>
+</body>
+</html>

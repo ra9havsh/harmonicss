@@ -1,0 +1,1860 @@
+{
+     "date-Harmonization-Process-Run": "2019/07/25",
+     "cohort":      {
+          "term-JA":           [
+                              {
+                    "code": "Biopsy",
+                    "label": "Biopsy"
+               },
+                              {
+                    "code": "Diagnosis",
+                    "label": "Diagnosis"
+               },
+                              {
+                    "code": "Gender",
+                    "label": "Gender"
+               },
+                              {
+                    "code": "Laboratory-Test",
+                    "label": "Laboratory Examination / Test"
+               },
+                              {
+                    "code": "Person",
+                    "label": "Person"
+               },
+                              {
+                    "code": "Symptom-or-Sign",
+                    "label": "Symptom / Sign"
+               },
+                              {
+                    "code": "ASSESS-20",
+                    "label": "Abnormal"
+               },
+                              {
+                    "code": "ASSESS-21",
+                    "label": "Below Down Normal Limit (DNL)"
+               },
+                              {
+                    "code": "BIOPSY-11",
+                    "label": "Germinal Centers [check]"
+               },
+                              {
+                    "code": "BIOPSY-21",
+                    "label": "Greenspan Focus Score"
+               },
+                              {
+                    "code": "BIOPSY-22",
+                    "label": "Chisholm-Mason Score"
+               },
+                              {
+                    "code": "BLOOD-110",
+                    "label": "Hemoglobin [Mass/volume]"
+               },
+                              {
+                    "code": "BLOOD-311",
+                    "label": "Cryoglobulins [presence]"
+               },
+                              {
+                    "code": "BLOOD-323",
+                    "label": "Immunoglobulin G (IgG) [Mass/volume]"
+               },
+                              {
+                    "code": "BLOOD-330",
+                    "label": "Monoclonal M-component [presence] (in Serum)"
+               },
+                              {
+                    "code": "BLOOD-511",
+                    "label": "Rheumatoid Factor (RF) [Units/volume]"
+               },
+                              {
+                    "code": "BLOOD-521",
+                    "label": "Antinuclear Antibodies (ANA) [presence]"
+               },
+                              {
+                    "code": "BLOOD-530",
+                    "label": "Anti-Ro/SSA [presence]"
+               },
+                              {
+                    "code": "BLOOD-531",
+                    "label": "Anti-Ro52/SSA [presence]"
+               },
+                              {
+                    "code": "BLOOD-532",
+                    "label": "Anti-Ro60/SSA [presence]"
+               },
+                              {
+                    "code": "BLOOD-540",
+                    "label": "Anti-La/SSB [presence]"
+               },
+                              {
+                    "code": "BLOOD-552",
+                    "label": "Anti-dsDNA [Presence]"
+               },
+                              {
+                    "code": "BLOOD-553",
+                    "label": "Anti-Smith (Anti-Sm) antibodies [Presence]"
+               },
+                              {
+                    "code": "BLOOD-554",
+                    "label": "Anti-RNP antibodies [Presence]"
+               },
+                              {
+                    "code": "BLOOD-610",
+                    "label": "C3 levels (Serum complement) [Mass/volume]"
+               },
+                              {
+                    "code": "BLOOD-620",
+                    "label": "C4 levels (Serum complement) [Mass/volume]"
+               },
+                              {
+                    "code": "COND-031000",
+                    "label": "Autoimmune Thyroid Disease"
+               },
+                              {
+                    "code": "COND-041000",
+                    "label": "Maculopapular Rash"
+               },
+                              {
+                    "code": "COND-042000",
+                    "label": "Annular Rash"
+               },
+                              {
+                    "code": "COND-045000",
+                    "label": "Palpable Purpura"
+               },
+                              {
+                    "code": "COND-050000",
+                    "label": "Lymphatic System Disease"
+               },
+                              {
+                    "code": "COND-052200",
+                    "label": "Lymphoma"
+               },
+                              {
+                    "code": "COND-052300",
+                    "label": "Hodgkin's Lymphoma"
+               },
+                              {
+                    "code": "COND-052511",
+                    "label": "B-cell Mucosa-associated Lymphoid Tissue (MALT) Lymphoma"
+               },
+                              {
+                    "code": "COND-052522",
+                    "label": "Diffuse Large B-cell Lymphoma"
+               },
+                              {
+                    "code": "COND-052523",
+                    "label": "Mantle B-cell Lymphoma"
+               },
+                              {
+                    "code": "COND-052590",
+                    "label": "Multiple Myeloma"
+               },
+                              {
+                    "code": "COND-052591",
+                    "label": "Other mature B-cell neoplasms"
+               },
+                              {
+                    "code": "COND-060000",
+                    "label": "Muscular System Disease"
+               },
+                              {
+                    "code": "COND-071600",
+                    "label": "Cerebral Stroke"
+               },
+                              {
+                    "code": "COND-072300",
+                    "label": "Painful Sensory Neuropathy"
+               },
+                              {
+                    "code": "COND-081200",
+                    "label": "Tubulointerstitial Nephritis"
+               },
+                              {
+                    "code": "COND-091000",
+                    "label": "Pulmonary Disease"
+               },
+                              {
+                    "code": "COND-101000",
+                    "label": "Arthritis"
+               },
+                              {
+                    "code": "COND-111000",
+                    "label": "Anemia"
+               },
+                              {
+                    "code": "COND-112000",
+                    "label": "Leukopenia"
+               },
+                              {
+                    "code": "COND-114000",
+                    "label": "Lymphopenia"
+               },
+                              {
+                    "code": "COND-115000",
+                    "label": "Thrombocytopenia"
+               },
+                              {
+                    "code": "ORGAN-01",
+                    "label": "Salivary Gland"
+               },
+                              {
+                    "code": "ORGAN-03",
+                    "label": "Lung"
+               },
+                              {
+                    "code": "ORGAN-04",
+                    "label": "Stomach"
+               },
+                              {
+                    "code": "ORGAN-05",
+                    "label": "Liver"
+               },
+                              {
+                    "code": "ORGAN-06",
+                    "label": "Spleen"
+               },
+                              {
+                    "code": "ORGAN-07",
+                    "label": "Lymph Nodes"
+               },
+                              {
+                    "code": "ORGAN-08",
+                    "label": "Bone Marrow"
+               },
+                              {
+                    "code": "ORGAN-91",
+                    "label": "Other MALT site"
+               },
+                              {
+                    "code": "ORGAN-92",
+                    "label": "Other non-MALT site"
+               },
+                              {
+                    "code": "SAL-BIO-20",
+                    "label": "Minor Salivary Gland Biopsy"
+               },
+                              {
+                    "code": "SEX-01",
+                    "label": "Male"
+               },
+                              {
+                    "code": "SEX-02",
+                    "label": "Female"
+               },
+                              {
+                    "code": "SYMPT-010",
+                    "label": "Parotid or Submandibular swelling"
+               },
+                              {
+                    "code": "SYMPT-020",
+                    "label": "Dry Mouth"
+               },
+                              {
+                    "code": "SYMPT-030",
+                    "label": "Dry Eyes"
+               },
+                              {
+                    "code": "SYMPT-120",
+                    "label": "Dry Cough"
+               },
+                              {
+                    "code": "SYMPT-140",
+                    "label": "Fever"
+               },
+                              {
+                    "code": "SYMPT-160",
+                    "label": "Fatigue"
+               },
+                              {
+                    "code": "SYMPT-180",
+                    "label": "Raynaud's Phenomenon"
+               }
+          ],
+          "number-Patients": 5,
+          "number-Fields": 60,
+          "number-Fields-Mapped": 40
+     },
+     "person-JA":      [
+                    {
+               "type": "Person",
+               "person-Unique-ID": "1",
+               "person-Date-Birth": "1946/--/--",
+               "person-SS-Symptoms-Onset": "2002/--/--",
+               "person-SS-Diagnosis": "2006/--/--",
+               "POSITIVE-STMT":                {
+                    "lab-Test-JA":                     [
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-110",
+                                   "code-Display-Name": "Hemoglobin [Mass/volume]"
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "12.0",
+                                   "interval-Amount-Up-Limit": "15.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-04",
+                                        "code-Display-Name": "g/dL"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-323",
+                                   "code-Display-Name": "Immunoglobulin G (IgG) [Mass/volume]"
+                              },
+                              "test-Outcome":                               {
+                                   "interval-Amount-Down-Limit": "15.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-20",
+                                   "code-Display-Name": "Abnormal"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "6.7",
+                                   "interval-Amount-Up-Limit": "14.5",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-330",
+                                   "code-Display-Name": "Monoclonal M-component [presence] (in Serum)"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-311",
+                                   "code-Display-Name": "Cryoglobulins [presence]"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-610",
+                                   "code-Display-Name": "C3 levels (Serum complement) [Mass/volume]"
+                              },
+                              "test-Outcome":                               {
+                                   "amount-Value": "140.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-22",
+                                   "code-Display-Name": "Above Upper Normal Limit (UNL)"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "67.0",
+                                   "interval-Amount-Up-Limit": "129.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-521",
+                                   "code-Display-Name": "Antinuclear Antibodies (ANA) [presence]"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-531",
+                                   "code-Display-Name": "Anti-Ro52/SSA [presence]"
+                              },
+                              "test-Outcome": true
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-532",
+                                   "code-Display-Name": "Anti-Ro60/SSA [presence]"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-530",
+                                   "code-Display-Name": "Anti-Ro/SSA [presence]"
+                              },
+                              "test-Outcome": true
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-540",
+                                   "code-Display-Name": "Anti-La/SSB [presence]"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-554",
+                                   "code-Display-Name": "Anti-RNP antibodies [Presence]"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-553",
+                                   "code-Display-Name": "Anti-Smith (Anti-Sm) antibodies [Presence]"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-552",
+                                   "code-Display-Name": "Anti-dsDNA [Presence]"
+                              },
+                              "test-Outcome": false
+                         }
+                    ],
+                    "condition-JA":                     [
+                                                  {
+                              "type": "Symptom-or-Sign",
+                              "symptom-sign-CV":                               {
+                                   "code-Value": "SYMPT-010",
+                                   "code-Display-Name": "Parotid or Submandibular swelling"
+                              }
+                         },
+                                                  {
+                              "type": "Diagnosis",
+                              "diagnosis-CV":                               {
+                                   "code-Value": "COND-050000",
+                                   "code-Display-Name": "Lymphatic System Disease"
+                              }
+                         },
+                                                  {
+                              "type": "Diagnosis",
+                              "diagnosis-CV":                               {
+                                   "code-Value": "COND-031000",
+                                   "code-Display-Name": "Autoimmune Thyroid Disease"
+                              }
+                         },
+                                                  {
+                              "type": "Diagnosis",
+                              "diagnosis-CV":                               {
+                                   "code-Value": "COND-052522",
+                                   "code-Display-Name": "Diffuse Large B-cell Lymphoma",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "diagnosis-Organ-CV-JA":                               [
+                                                                      {
+                                        "code-Value": "ORGAN-07",
+                                        "code-Display-Name": "Lymph Nodes",
+                                        "hierarchical-Relationship": "ET"
+                                   },
+                                                                      {
+                                        "code-Value": "ORGAN-08",
+                                        "code-Display-Name": "Bone Marrow",
+                                        "hierarchical-Relationship": "ET"
+                                   }
+                              ],
+                              "diagnosis-Date": "2008/--/--"
+                         },
+                                                  {
+                              "type": "Symptom-or-Sign",
+                              "symptom-sign-CV":                               {
+                                   "code-Value": "SYMPT-140",
+                                   "code-Display-Name": "Fever",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "symptom-sign-Date": "2002/--/--"
+                         },
+                                                  {
+                              "type": "Symptom-or-Sign",
+                              "symptom-sign-CV":                               {
+                                   "code-Value": "SYMPT-180",
+                                   "code-Display-Name": "Raynaud's Phenomenon",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "symptom-sign-Date": "2002/--/--"
+                         }
+                    ],
+                    "demographic-JA": [                    {
+                         "type": "Gender",
+                         "gender-CV":                          {
+                              "code-Value": "SEX-02",
+                              "code-Display-Name": "Female",
+                              "hierarchical-Relationship": "ET"
+                         }
+                    }]
+               },
+               "NEGATIVE-STMT": {"condition-JA":                [
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-111000",
+                              "code-Display-Name": "Anemia"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-112000",
+                              "code-Display-Name": "Leukopenia"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-114000",
+                              "code-Display-Name": "Lymphopenia"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-115000",
+                              "code-Display-Name": "Thrombocytopenia"
+                         }
+                    },
+                                        {
+                         "type": "Symptom-or-Sign",
+                         "symptom-sign-CV":                          {
+                              "code-Value": "SYMPT-180",
+                              "code-Display-Name": "Raynaud's Phenomenon"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-101000",
+                              "code-Display-Name": "Arthritis"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-045000",
+                              "code-Display-Name": "Palpable Purpura"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-060000",
+                              "code-Display-Name": "Muscular System Disease"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-091000",
+                              "code-Display-Name": "Pulmonary Disease"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-081200",
+                              "code-Display-Name": "Tubulointerstitial Nephritis"
+                         }
+                    }
+               ]}
+          },
+                    {
+               "type": "Person",
+               "person-Unique-ID": "2",
+               "person-Date-Birth": "1952/--/--",
+               "person-SS-Symptoms-Onset": "1993/--/--",
+               "person-SS-Diagnosis": "2013/--/--",
+               "POSITIVE-STMT":                {
+                    "biopsy-Test-JA":                     [
+                                                  {
+                              "type": "Biopsy",
+                              "biopsy-Type-CV":                               {
+                                   "code-Value": "SAL-BIO-20",
+                                   "code-Display-Name": "Minor Salivary Gland Biopsy"
+                              },
+                              "test-CV":                               {
+                                   "code-Value": "BIOPSY-21",
+                                   "code-Display-Name": "Greenspan Focus Score"
+                              },
+                              "test-Date": "2013/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "5.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-19",
+                                        "code-Display-Name": "#"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Biopsy",
+                              "biopsy-Type-CV":                               {
+                                   "code-Value": "SAL-BIO-20",
+                                   "code-Display-Name": "Minor Salivary Gland Biopsy"
+                              },
+                              "test-CV":                               {
+                                   "code-Value": "BIOPSY-22",
+                                   "code-Display-Name": "Chisholm-Mason Score"
+                              },
+                              "test-Outcome":                               {
+                                   "amount-Value": "4.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-19",
+                                        "code-Display-Name": "#"
+                                   }
+                              }
+                         }
+                    ],
+                    "lab-Test-JA":                     [
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-110",
+                                   "code-Display-Name": "Hemoglobin [Mass/volume]"
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "12.0",
+                                   "interval-Amount-Up-Limit": "15.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-04",
+                                        "code-Display-Name": "g/dL"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-323",
+                                   "code-Display-Name": "Immunoglobulin G (IgG) [Mass/volume]"
+                              },
+                              "test-Outcome":                               {
+                                   "interval-Amount-Down-Limit": "15.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-20",
+                                   "code-Display-Name": "Abnormal"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "6.7",
+                                   "interval-Amount-Up-Limit": "14.5",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-330",
+                                   "code-Display-Name": "Monoclonal M-component [presence] (in Serum)"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-521",
+                                   "code-Display-Name": "Antinuclear Antibodies (ANA) [presence]"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-531",
+                                   "code-Display-Name": "Anti-Ro52/SSA [presence]"
+                              },
+                              "test-Outcome": true
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-532",
+                                   "code-Display-Name": "Anti-Ro60/SSA [presence]"
+                              },
+                              "test-Outcome": true
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-530",
+                                   "code-Display-Name": "Anti-Ro/SSA [presence]"
+                              },
+                              "test-Outcome": true
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-540",
+                                   "code-Display-Name": "Anti-La/SSB [presence]"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-554",
+                                   "code-Display-Name": "Anti-RNP antibodies [Presence]"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-553",
+                                   "code-Display-Name": "Anti-Smith (Anti-Sm) antibodies [Presence]"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-552",
+                                   "code-Display-Name": "Anti-dsDNA [Presence]"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-511",
+                                   "code-Display-Name": "Rheumatoid Factor (RF) [Units/volume]"
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-20",
+                                   "code-Display-Name": "Abnormal"
+                              }
+                         }
+                    ],
+                    "condition-JA":                     [
+                                                  {
+                              "type": "Diagnosis",
+                              "diagnosis-CV":                               {
+                                   "code-Value": "COND-112000",
+                                   "code-Display-Name": "Leukopenia"
+                              }
+                         },
+                                                  {
+                              "type": "Diagnosis",
+                              "diagnosis-CV":                               {
+                                   "code-Value": "COND-031000",
+                                   "code-Display-Name": "Autoimmune Thyroid Disease"
+                              }
+                         }
+                    ],
+                    "demographic-JA": [                    {
+                         "type": "Gender",
+                         "gender-CV":                          {
+                              "code-Value": "SEX-02",
+                              "code-Display-Name": "Female",
+                              "hierarchical-Relationship": "ET"
+                         }
+                    }]
+               },
+               "NEGATIVE-STMT": {"condition-JA":                [
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-111000",
+                              "code-Display-Name": "Anemia"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-115000",
+                              "code-Display-Name": "Thrombocytopenia"
+                         }
+                    },
+                                        {
+                         "type": "Symptom-or-Sign",
+                         "symptom-sign-CV":                          {
+                              "code-Value": "SYMPT-180",
+                              "code-Display-Name": "Raynaud's Phenomenon"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-101000",
+                              "code-Display-Name": "Arthritis"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-045000",
+                              "code-Display-Name": "Palpable Purpura"
+                         }
+                    },
+                                        {
+                         "type": "Symptom-or-Sign",
+                         "symptom-sign-CV":                          {
+                              "code-Value": "SYMPT-010",
+                              "code-Display-Name": "Parotid or Submandibular swelling"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-050000",
+                              "code-Display-Name": "Lymphatic System Disease"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-060000",
+                              "code-Display-Name": "Muscular System Disease"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-091000",
+                              "code-Display-Name": "Pulmonary Disease"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-081200",
+                              "code-Display-Name": "Tubulointerstitial Nephritis"
+                         }
+                    }
+               ]}
+          },
+                    {
+               "type": "Person",
+               "person-Unique-ID": "3",
+               "person-Date-Birth": "1982/--/--",
+               "person-SS-Symptoms-Onset": "2010/--/--",
+               "person-SS-Diagnosis": "2013/--/--",
+               "POSITIVE-STMT":                {
+                    "biopsy-Test-JA":                     [
+                                                  {
+                              "type": "Biopsy",
+                              "biopsy-Type-CV":                               {
+                                   "code-Value": "SAL-BIO-20",
+                                   "code-Display-Name": "Minor Salivary Gland Biopsy"
+                              },
+                              "test-CV":                               {
+                                   "code-Value": "BIOPSY-21",
+                                   "code-Display-Name": "Greenspan Focus Score"
+                              },
+                              "test-Date": "2013/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "3.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-19",
+                                        "code-Display-Name": "#"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Biopsy",
+                              "biopsy-Type-CV":                               {
+                                   "code-Value": "SAL-BIO-20",
+                                   "code-Display-Name": "Minor Salivary Gland Biopsy"
+                              },
+                              "test-CV":                               {
+                                   "code-Value": "BIOPSY-22",
+                                   "code-Display-Name": "Chisholm-Mason Score"
+                              },
+                              "test-Outcome":                               {
+                                   "amount-Value": "4.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-19",
+                                        "code-Display-Name": "#"
+                                   }
+                              }
+                         }
+                    ],
+                    "lab-Test-JA":                     [
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-110",
+                                   "code-Display-Name": "Hemoglobin [Mass/volume]"
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "12.0",
+                                   "interval-Amount-Up-Limit": "15.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-04",
+                                        "code-Display-Name": "g/dL"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-323",
+                                   "code-Display-Name": "Immunoglobulin G (IgG) [Mass/volume]"
+                              },
+                              "test-Outcome":                               {
+                                   "interval-Amount-Down-Limit": "15.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-20",
+                                   "code-Display-Name": "Abnormal"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "6.7",
+                                   "interval-Amount-Up-Limit": "14.5",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-330",
+                                   "code-Display-Name": "Monoclonal M-component [presence] (in Serum)"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-610",
+                                   "code-Display-Name": "C3 levels (Serum complement) [Mass/volume]"
+                              },
+                              "test-Outcome":                               {
+                                   "amount-Value": "69.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "67.0",
+                                   "interval-Amount-Up-Limit": "129.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-521",
+                                   "code-Display-Name": "Antinuclear Antibodies (ANA) [presence]"
+                              },
+                              "test-Outcome": true
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-531",
+                                   "code-Display-Name": "Anti-Ro52/SSA [presence]"
+                              },
+                              "test-Outcome": true
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-532",
+                                   "code-Display-Name": "Anti-Ro60/SSA [presence]"
+                              },
+                              "test-Outcome": true
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-530",
+                                   "code-Display-Name": "Anti-Ro/SSA [presence]"
+                              },
+                              "test-Outcome": true
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-540",
+                                   "code-Display-Name": "Anti-La/SSB [presence]"
+                              },
+                              "test-Outcome": true
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-554",
+                                   "code-Display-Name": "Anti-RNP antibodies [Presence]"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-553",
+                                   "code-Display-Name": "Anti-Smith (Anti-Sm) antibodies [Presence]"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-552",
+                                   "code-Display-Name": "Anti-dsDNA [Presence]"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-511",
+                                   "code-Display-Name": "Rheumatoid Factor (RF) [Units/volume]"
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-20",
+                                   "code-Display-Name": "Abnormal"
+                              }
+                         }
+                    ],
+                    "condition-JA":                     [
+                                                  {
+                              "type": "Diagnosis",
+                              "diagnosis-CV":                               {
+                                   "code-Value": "COND-112000",
+                                   "code-Display-Name": "Leukopenia"
+                              }
+                         },
+                                                  {
+                              "type": "Symptom-or-Sign",
+                              "symptom-sign-CV":                               {
+                                   "code-Value": "SYMPT-010",
+                                   "code-Display-Name": "Parotid or Submandibular swelling"
+                              }
+                         },
+                                                  {
+                              "type": "Diagnosis",
+                              "diagnosis-CV":                               {
+                                   "code-Value": "COND-050000",
+                                   "code-Display-Name": "Lymphatic System Disease"
+                              }
+                         },
+                                                  {
+                              "type": "Diagnosis",
+                              "diagnosis-CV":                               {
+                                   "code-Value": "COND-052511",
+                                   "code-Display-Name": "B-cell Mucosa-associated Lymphoid Tissue (MALT) Lymphoma",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "diagnosis-Organ-CV-JA": [                              {
+                                   "code-Value": "ORGAN-01",
+                                   "code-Display-Name": "Salivary Gland",
+                                   "hierarchical-Relationship": "NT"
+                              }],
+                              "diagnosis-Date": "2013/--/--"
+                         },
+                                                  {
+                              "type": "Symptom-or-Sign",
+                              "symptom-sign-CV":                               {
+                                   "hierarchical-Relationship": "OT",
+                                   "boolean-Operator": "AND",
+                                   "expression-Code-CV-JA":                                    [
+                                                                                {
+                                             "code-Value": "SYMPT-020",
+                                             "code-Display-Name": "Dry Mouth"
+                                        },
+                                                                                {
+                                             "code-Value": "SYMPT-030",
+                                             "code-Display-Name": "Dry Eyes"
+                                        }
+                                   ]
+                              },
+                              "symptom-sign-Date": "2010/--/--"
+                         }
+                    ],
+                    "demographic-JA": [                    {
+                         "type": "Gender",
+                         "gender-CV":                          {
+                              "code-Value": "SEX-02",
+                              "code-Display-Name": "Female",
+                              "hierarchical-Relationship": "ET"
+                         }
+                    }]
+               },
+               "NEGATIVE-STMT": {"condition-JA":                [
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-111000",
+                              "code-Display-Name": "Anemia"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-114000",
+                              "code-Display-Name": "Lymphopenia"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-115000",
+                              "code-Display-Name": "Thrombocytopenia"
+                         }
+                    },
+                                        {
+                         "type": "Symptom-or-Sign",
+                         "symptom-sign-CV":                          {
+                              "code-Value": "SYMPT-180",
+                              "code-Display-Name": "Raynaud's Phenomenon"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-101000",
+                              "code-Display-Name": "Arthritis"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-045000",
+                              "code-Display-Name": "Palpable Purpura"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-031000",
+                              "code-Display-Name": "Autoimmune Thyroid Disease"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-060000",
+                              "code-Display-Name": "Muscular System Disease"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-091000",
+                              "code-Display-Name": "Pulmonary Disease"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-081200",
+                              "code-Display-Name": "Tubulointerstitial Nephritis"
+                         }
+                    }
+               ]}
+          },
+                    {
+               "type": "Person",
+               "person-Unique-ID": "4",
+               "person-Date-Birth": "1965/--/--",
+               "person-SS-Diagnosis": "2013/--/--",
+               "POSITIVE-STMT":                {
+                    "biopsy-Test-JA":                     [
+                                                  {
+                              "type": "Biopsy",
+                              "biopsy-Type-CV":                               {
+                                   "code-Value": "SAL-BIO-20",
+                                   "code-Display-Name": "Minor Salivary Gland Biopsy"
+                              },
+                              "test-CV":                               {
+                                   "code-Value": "BIOPSY-21",
+                                   "code-Display-Name": "Greenspan Focus Score"
+                              },
+                              "test-Date": "2013/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "1.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-19",
+                                        "code-Display-Name": "#"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Biopsy",
+                              "biopsy-Type-CV":                               {
+                                   "code-Value": "SAL-BIO-20",
+                                   "code-Display-Name": "Minor Salivary Gland Biopsy"
+                              },
+                              "test-CV":                               {
+                                   "code-Value": "BIOPSY-22",
+                                   "code-Display-Name": "Chisholm-Mason Score"
+                              },
+                              "test-Outcome":                               {
+                                   "amount-Value": "3.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-19",
+                                        "code-Display-Name": "#"
+                                   }
+                              }
+                         }
+                    ],
+                    "lab-Test-JA":                     [
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-110",
+                                   "code-Display-Name": "Hemoglobin [Mass/volume]"
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "12.0",
+                                   "interval-Amount-Up-Limit": "15.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-04",
+                                        "code-Display-Name": "g/dL"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-323",
+                                   "code-Display-Name": "Immunoglobulin G (IgG) [Mass/volume]"
+                              },
+                              "test-Outcome":                               {
+                                   "interval-Amount-Down-Limit": "15.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-20",
+                                   "code-Display-Name": "Abnormal"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "6.7",
+                                   "interval-Amount-Up-Limit": "14.5",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-330",
+                                   "code-Display-Name": "Monoclonal M-component [presence] (in Serum)"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-610",
+                                   "code-Display-Name": "C3 levels (Serum complement) [Mass/volume]"
+                              },
+                              "test-Outcome":                               {
+                                   "amount-Value": "77.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "67.0",
+                                   "interval-Amount-Up-Limit": "129.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-521",
+                                   "code-Display-Name": "Antinuclear Antibodies (ANA) [presence]"
+                              },
+                              "test-Outcome": true
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-531",
+                                   "code-Display-Name": "Anti-Ro52/SSA [presence]"
+                              },
+                              "test-Outcome": true
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-532",
+                                   "code-Display-Name": "Anti-Ro60/SSA [presence]"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-530",
+                                   "code-Display-Name": "Anti-Ro/SSA [presence]"
+                              },
+                              "test-Outcome": true
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-540",
+                                   "code-Display-Name": "Anti-La/SSB [presence]"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-554",
+                                   "code-Display-Name": "Anti-RNP antibodies [Presence]"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-553",
+                                   "code-Display-Name": "Anti-Smith (Anti-Sm) antibodies [Presence]"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-552",
+                                   "code-Display-Name": "Anti-dsDNA [Presence]"
+                              },
+                              "test-Outcome": false
+                         }
+                    ],
+                    "condition-JA":                     [
+                                                  {
+                              "type": "Diagnosis",
+                              "diagnosis-CV":                               {
+                                   "code-Value": "COND-112000",
+                                   "code-Display-Name": "Leukopenia"
+                              }
+                         },
+                                                  {
+                              "type": "Symptom-or-Sign",
+                              "symptom-sign-CV":                               {
+                                   "code-Value": "SYMPT-180",
+                                   "code-Display-Name": "Raynaud's Phenomenon"
+                              }
+                         },
+                                                  {
+                              "type": "Symptom-or-Sign",
+                              "symptom-sign-CV":                               {
+                                   "hierarchical-Relationship": "OT",
+                                   "boolean-Operator": "AND",
+                                   "expression-Code-CV-JA":                                    [
+                                                                                {
+                                             "code-Value": "SYMPT-020",
+                                             "code-Display-Name": "Dry Mouth"
+                                        },
+                                                                                {
+                                             "code-Value": "SYMPT-030",
+                                             "code-Display-Name": "Dry Eyes"
+                                        }
+                                   ]
+                              }
+                         }
+                    ],
+                    "demographic-JA": [                    {
+                         "type": "Gender",
+                         "gender-CV":                          {
+                              "code-Value": "SEX-02",
+                              "code-Display-Name": "Female",
+                              "hierarchical-Relationship": "ET"
+                         }
+                    }]
+               },
+               "NEGATIVE-STMT": {"condition-JA":                [
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-111000",
+                              "code-Display-Name": "Anemia"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-115000",
+                              "code-Display-Name": "Thrombocytopenia"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-101000",
+                              "code-Display-Name": "Arthritis"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-045000",
+                              "code-Display-Name": "Palpable Purpura"
+                         }
+                    },
+                                        {
+                         "type": "Symptom-or-Sign",
+                         "symptom-sign-CV":                          {
+                              "code-Value": "SYMPT-010",
+                              "code-Display-Name": "Parotid or Submandibular swelling"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-050000",
+                              "code-Display-Name": "Lymphatic System Disease"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-031000",
+                              "code-Display-Name": "Autoimmune Thyroid Disease"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-060000",
+                              "code-Display-Name": "Muscular System Disease"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-091000",
+                              "code-Display-Name": "Pulmonary Disease"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-081200",
+                              "code-Display-Name": "Tubulointerstitial Nephritis"
+                         }
+                    }
+               ]}
+          },
+                    {
+               "type": "Person",
+               "person-Unique-ID": "5",
+               "person-Date-Birth": "1952/--/--",
+               "person-SS-Symptoms-Onset": "1990/--/--",
+               "person-SS-Diagnosis": "2000/--/--",
+               "POSITIVE-STMT":                {
+                    "biopsy-Test-JA":                     [
+                                                  {
+                              "type": "Biopsy",
+                              "test-CV":                               {
+                                   "code-Value": "BIOPSY-11",
+                                   "code-Display-Name": "Germinal Centers [check]"
+                              },
+                              "test-Outcome": false,
+                              "test-Date": "2001/--/--",
+                              "biopsy-Type-CV":                               {
+                                   "code-Value": "SAL-BIO-20",
+                                   "code-Display-Name": "Minor Salivary Gland Biopsy"
+                              }
+                         },
+                                                  {
+                              "type": "Biopsy",
+                              "biopsy-Type-CV":                               {
+                                   "code-Value": "SAL-BIO-20",
+                                   "code-Display-Name": "Minor Salivary Gland Biopsy"
+                              },
+                              "test-CV":                               {
+                                   "code-Value": "BIOPSY-21",
+                                   "code-Display-Name": "Greenspan Focus Score"
+                              },
+                              "test-Date": "2001/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "5.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-19",
+                                        "code-Display-Name": "#"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Biopsy",
+                              "biopsy-Type-CV":                               {
+                                   "code-Value": "SAL-BIO-20",
+                                   "code-Display-Name": "Minor Salivary Gland Biopsy"
+                              },
+                              "test-CV":                               {
+                                   "code-Value": "BIOPSY-22",
+                                   "code-Display-Name": "Chisholm-Mason Score"
+                              },
+                              "test-Outcome":                               {
+                                   "amount-Value": "4.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-19",
+                                        "code-Display-Name": "#"
+                                   }
+                              }
+                         }
+                    ],
+                    "lab-Test-JA":                     [
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-110",
+                                   "code-Display-Name": "Hemoglobin [Mass/volume]"
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-21",
+                                   "code-Display-Name": "Below Down Normal Limit (DNL)"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "12.0",
+                                   "interval-Amount-Up-Limit": "15.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-04",
+                                        "code-Display-Name": "g/dL"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-323",
+                                   "code-Display-Name": "Immunoglobulin G (IgG) [Mass/volume]"
+                              },
+                              "test-Outcome":                               {
+                                   "interval-Amount-Down-Limit": "15.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-20",
+                                   "code-Display-Name": "Abnormal"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "6.7",
+                                   "interval-Amount-Up-Limit": "14.5",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-330",
+                                   "code-Display-Name": "Monoclonal M-component [presence] (in Serum)"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-610",
+                                   "code-Display-Name": "C3 levels (Serum complement) [Mass/volume]"
+                              },
+                              "test-Outcome":                               {
+                                   "amount-Value": "128.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "67.0",
+                                   "interval-Amount-Up-Limit": "129.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-620",
+                                   "code-Display-Name": "C4 levels (Serum complement) [Mass/volume]"
+                              },
+                              "test-Outcome":                               {
+                                   "amount-Value": "9.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-21",
+                                   "code-Display-Name": "Below Down Normal Limit (DNL)"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "13.0",
+                                   "interval-Amount-Up-Limit": "32.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-521",
+                                   "code-Display-Name": "Antinuclear Antibodies (ANA) [presence]"
+                              },
+                              "test-Outcome": true
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-531",
+                                   "code-Display-Name": "Anti-Ro52/SSA [presence]"
+                              },
+                              "test-Outcome": true
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-532",
+                                   "code-Display-Name": "Anti-Ro60/SSA [presence]"
+                              },
+                              "test-Outcome": true
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-530",
+                                   "code-Display-Name": "Anti-Ro/SSA [presence]"
+                              },
+                              "test-Outcome": true
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-540",
+                                   "code-Display-Name": "Anti-La/SSB [presence]"
+                              },
+                              "test-Outcome": true
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-554",
+                                   "code-Display-Name": "Anti-RNP antibodies [Presence]"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-553",
+                                   "code-Display-Name": "Anti-Smith (Anti-Sm) antibodies [Presence]"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-552",
+                                   "code-Display-Name": "Anti-dsDNA [Presence]"
+                              },
+                              "test-Outcome": false
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-511",
+                                   "code-Display-Name": "Rheumatoid Factor (RF) [Units/volume]"
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal"
+                              }
+                         }
+                    ],
+                    "condition-JA":                     [
+                                                  {
+                              "type": "Diagnosis",
+                              "diagnosis-CV":                               {
+                                   "code-Value": "COND-111000",
+                                   "code-Display-Name": "Anemia"
+                              }
+                         },
+                                                  {
+                              "type": "Symptom-or-Sign",
+                              "symptom-sign-CV":                               {
+                                   "code-Value": "SYMPT-180",
+                                   "code-Display-Name": "Raynaud's Phenomenon"
+                              }
+                         },
+                                                  {
+                              "type": "Symptom-or-Sign",
+                              "symptom-sign-CV":                               {
+                                   "code-Value": "SYMPT-010",
+                                   "code-Display-Name": "Parotid or Submandibular swelling"
+                              }
+                         },
+                                                  {
+                              "type": "Symptom-or-Sign",
+                              "symptom-sign-CV":                               {
+                                   "hierarchical-Relationship": "OT",
+                                   "boolean-Operator": "AND",
+                                   "expression-Code-CV-JA":                                    [
+                                                                                {
+                                             "code-Value": "SYMPT-020",
+                                             "code-Display-Name": "Dry Mouth"
+                                        },
+                                                                                {
+                                             "code-Value": "SYMPT-030",
+                                             "code-Display-Name": "Dry Eyes"
+                                        }
+                                   ]
+                              },
+                              "symptom-sign-Date": "1990/--/--"
+                         }
+                    ],
+                    "demographic-JA": [                    {
+                         "type": "Gender",
+                         "gender-CV":                          {
+                              "code-Value": "SEX-01",
+                              "code-Display-Name": "Male",
+                              "hierarchical-Relationship": "ET"
+                         }
+                    }]
+               },
+               "NEGATIVE-STMT": {"condition-JA":                [
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-112000",
+                              "code-Display-Name": "Leukopenia"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-115000",
+                              "code-Display-Name": "Thrombocytopenia"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-101000",
+                              "code-Display-Name": "Arthritis"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-045000",
+                              "code-Display-Name": "Palpable Purpura"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-050000",
+                              "code-Display-Name": "Lymphatic System Disease"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-031000",
+                              "code-Display-Name": "Autoimmune Thyroid Disease"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-060000",
+                              "code-Display-Name": "Muscular System Disease"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-091000",
+                              "code-Display-Name": "Pulmonary Disease"
+                         }
+                    },
+                                        {
+                         "type": "Diagnosis",
+                         "diagnosis-CV":                          {
+                              "code-Value": "COND-081200",
+                              "code-Display-Name": "Tubulointerstitial Nephritis"
+                         }
+                    }
+               ]}
+          }
+     ],
+     "file": "File automatically generated by the Cohort Data Harmonization tool (version: 0.9) developed by ICCS/NTUA within European Project HarmonicSS."
+}

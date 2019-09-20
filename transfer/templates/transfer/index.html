@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    {% load static %}
+    {% load bootstrap4 %}
+    <meta charset="UTF-8">
+    <title>Transfer</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'transfer/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+</head>
+<body>
+<nav class="navbar">
+  <h1 class="navbar-brand">Harmonicss</h1>
+</nav>
+ <form class="col-sm-6" method="Post" action="#">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="url">Url:</label>
+            {{ transfer_form.url }}
+        </div>
+        <div class="transfer-btn">
+            <button type="submit" class="btn btn-success" onclick="loader();">Transfer</button>
+        </div>
+    </form>
+<div class="loading" id="loading">Loading&#8230;</div>
+ <script>
+    function loader(){
+        document.getElementById('loading').style.display = "block";
+    }
+</script>
+</body>
+</html>

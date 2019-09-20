@@ -1,0 +1,1457 @@
+{
+     "date-Harmonization-Process-Run": "2019/07/16",
+     "cohort":      {
+          "term-JA":           [
+                              {
+                    "code": "Biopsy",
+                    "label": "Biopsy"
+               },
+                              {
+                    "code": "Diagnosis",
+                    "label": "Diagnosis"
+               },
+                              {
+                    "code": "Ethnicity",
+                    "label": "Ethnicity"
+               },
+                              {
+                    "code": "Gender",
+                    "label": "Gender"
+               },
+                              {
+                    "code": "Laboratory-Test",
+                    "label": "Laboratory Examination / Test"
+               },
+                              {
+                    "code": "Person",
+                    "label": "Person"
+               },
+                              {
+                    "code": "Questionnaire-Score",
+                    "label": "Questionnaire Score"
+               },
+                              {
+                    "code": "BIOPSY-13",
+                    "label": "Lymphoma [check]"
+               },
+                              {
+                    "code": "BLOOD-322",
+                    "label": "Immunoglobulin A (IgA) [Mass/volume]"
+               },
+                              {
+                    "code": "BLOOD-323",
+                    "label": "Immunoglobulin G (IgG) [Mass/volume]"
+               },
+                              {
+                    "code": "BLOOD-325",
+                    "label": "Immunoglobulin M (IgM) [Mass/volume]"
+               },
+                              {
+                    "code": "BLOOD-330",
+                    "label": "Monoclonal M-component [presence] (in Serum)"
+               },
+                              {
+                    "code": "BLOOD-511",
+                    "label": "Rheumatoid Factor (RF) [Units/volume]"
+               },
+                              {
+                    "code": "BLOOD-521",
+                    "label": "Antinuclear Antibodies (ANA) [presence]"
+               },
+                              {
+                    "code": "BLOOD-522",
+                    "label": "Antinuclear Antibodies (ANA) titer"
+               },
+                              {
+                    "code": "BLOOD-530",
+                    "label": "Anti-Ro/SSA [presence]"
+               },
+                              {
+                    "code": "BLOOD-540",
+                    "label": "Anti-La/SSB [presence]"
+               },
+                              {
+                    "code": "BLOOD-610",
+                    "label": "C3 levels (Serum complement) [Mass/volume]"
+               },
+                              {
+                    "code": "BLOOD-620",
+                    "label": "C4 levels (Serum complement) [Mass/volume]"
+               },
+                              {
+                    "code": "COND-121000",
+                    "label": "Cryoglobulinemic vasculitis"
+               },
+                              {
+                    "code": "ETHN-03",
+                    "label": "Asian"
+               },
+                              {
+                    "code": "ETHN-04",
+                    "label": "Black or African American"
+               },
+                              {
+                    "code": "ETHN-05",
+                    "label": "Native Hawaiian or Other Pacific Islander"
+               },
+                              {
+                    "code": "ETHN-06",
+                    "label": "Caucasian"
+               },
+                              {
+                    "code": "QUEST-010",
+                    "label": "EULAR Sjogren's syndrome Disease Activity Index (ESSDAI) score"
+               },
+                              {
+                    "code": "SAL-BIO-20",
+                    "label": "Minor Salivary Gland Biopsy"
+               },
+                              {
+                    "code": "SEX-01",
+                    "label": "Male"
+               },
+                              {
+                    "code": "SEX-02",
+                    "label": "Female"
+               }
+          ],
+          "number-Patients": 5,
+          "number-Fields": 27,
+          "number-Fields-Mapped": 27
+     },
+     "person-JA":      [
+                    {
+               "type": "Person",
+               "person-Unique-ID": "5",
+               "person-Date-Birth": "1946/--/--",
+               "person-SS-Symptoms-Onset": "1963/--/--",
+               "person-SS-Diagnosis": "2010/--/--",
+               "person-Cohort-Inclusion": "1996/--/--",
+               "POSITIVE-STMT":                {
+                    "biopsy-Test-JA": [                    {
+                         "type": "Biopsy",
+                         "test-CV":                          {
+                              "code-Value": "BIOPSY-13",
+                              "code-Display-Name": "Lymphoma [check]"
+                         },
+                         "test-Outcome": false,
+                         "test-Date": "2010/--/--",
+                         "biopsy-Type-CV":                          {
+                              "code-Value": "SAL-BIO-20",
+                              "code-Display-Name": "Minor Salivary Gland Biopsy"
+                         }
+                    }],
+                    "demographic-JA":                     [
+                                                  {
+                              "type": "Ethnicity",
+                              "ethnicity-CV":                               {
+                                   "code-Value": "ETHN-04",
+                                   "code-Display-Name": "Black or African American",
+                                   "hierarchical-Relationship": "ET"
+                              }
+                         },
+                                                  {
+                              "type": "Gender",
+                              "gender-CV":                               {
+                                   "code-Value": "SEX-02",
+                                   "code-Display-Name": "Female",
+                                   "hierarchical-Relationship": "ET"
+                              }
+                         }
+                    ],
+                    "questionnaire-JA": [                    {
+                         "type": "Questionnaire-Score",
+                         "score-CV":                          {
+                              "code-Value": "QUEST-010",
+                              "code-Display-Name": "EULAR Sjogren's syndrome Disease Activity Index (ESSDAI) score"
+                         },
+                         "completion-Date": "2010/--/--",
+                         "questionnaire-Score": 7,
+                         "score-Assessment-Code":                          {
+                              "code-Value": "ASSESS-22",
+                              "code-Display-Name": "Above Upper Normal Limit (UNL)"
+                         },
+                         "score-Normal-Range":                          {
+                              "interval-Integer-Down-Limit": 0,
+                              "interval-Integer-Up-Limit": 0
+                         }
+                    }],
+                    "lab-Test-JA":                     [
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-530",
+                                   "code-Display-Name": "Anti-Ro/SSA [presence]"
+                              },
+                              "test-Outcome": true,
+                              "test-Date": "2010/--/--"
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-540",
+                                   "code-Display-Name": "Anti-La/SSB [presence]"
+                              },
+                              "test-Outcome": true,
+                              "test-Date": "2010/--/--"
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-610",
+                                   "code-Display-Name": "C3 levels (Serum complement) [Mass/volume]"
+                              },
+                              "test-Date": "2010/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "100.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "75.0",
+                                   "interval-Amount-Up-Limit": "165.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-620",
+                                   "code-Display-Name": "C4 levels (Serum complement) [Mass/volume]"
+                              },
+                              "test-Date": "2010/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "19.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "14.0",
+                                   "interval-Amount-Up-Limit": "54.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-330",
+                                   "code-Display-Name": "Monoclonal M-component [presence] (in Serum)"
+                              },
+                              "test-Outcome": false,
+                              "test-Date": "2010/--/--"
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-322",
+                                   "code-Display-Name": "Immunoglobulin A (IgA) [Mass/volume]"
+                              },
+                              "test-Date": "2010/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "2.83",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "0.8",
+                                   "interval-Amount-Up-Limit": "4.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-323",
+                                   "code-Display-Name": "Immunoglobulin G (IgG) [Mass/volume]"
+                              },
+                              "test-Date": "2010/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "26.3",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-22",
+                                   "code-Display-Name": "Above Upper Normal Limit (UNL)",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "5.5",
+                                   "interval-Amount-Up-Limit": "16.5",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-325",
+                                   "code-Display-Name": "Immunoglobulin M (IgM) [Mass/volume]"
+                              },
+                              "test-Date": "2010/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "1.12",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "0.4",
+                                   "interval-Amount-Up-Limit": "2.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              }
+                         }
+                    ]
+               },
+               "NEGATIVE-STMT": {"condition-JA": [               {
+                    "type": "Diagnosis",
+                    "diagnosis-CV":                     {
+                         "code-Value": "COND-121000",
+                         "code-Display-Name": "Cryoglobulinemic vasculitis"
+                    }
+               }]}
+          },
+                    {
+               "type": "Person",
+               "person-Unique-ID": "284",
+               "person-Date-Birth": "1949/--/--",
+               "person-SS-Symptoms-Onset": "1958/--/--",
+               "person-SS-Diagnosis": "2009/--/--",
+               "person-Cohort-Inclusion": "2012/--/--",
+               "POSITIVE-STMT":                {
+                    "biopsy-Test-JA": [                    {
+                         "type": "Biopsy",
+                         "test-CV":                          {
+                              "code-Value": "BIOPSY-13",
+                              "code-Display-Name": "Lymphoma [check]"
+                         },
+                         "test-Outcome": false,
+                         "test-Date": "2009/--/--",
+                         "biopsy-Type-CV":                          {
+                              "code-Value": "SAL-BIO-20",
+                              "code-Display-Name": "Minor Salivary Gland Biopsy"
+                         }
+                    }],
+                    "demographic-JA":                     [
+                                                  {
+                              "type": "Ethnicity",
+                              "ethnicity-CV":                               {
+                                   "code-Value": "ETHN-06",
+                                   "code-Display-Name": "Caucasian",
+                                   "hierarchical-Relationship": "ET"
+                              }
+                         },
+                                                  {
+                              "type": "Gender",
+                              "gender-CV":                               {
+                                   "code-Value": "SEX-02",
+                                   "code-Display-Name": "Female",
+                                   "hierarchical-Relationship": "ET"
+                              }
+                         }
+                    ],
+                    "questionnaire-JA": [                    {
+                         "type": "Questionnaire-Score",
+                         "score-CV":                          {
+                              "code-Value": "QUEST-010",
+                              "code-Display-Name": "EULAR Sjogren's syndrome Disease Activity Index (ESSDAI) score"
+                         },
+                         "completion-Date": "2009/--/--",
+                         "questionnaire-Score": 9,
+                         "score-Assessment-Code":                          {
+                              "code-Value": "ASSESS-22",
+                              "code-Display-Name": "Above Upper Normal Limit (UNL)"
+                         },
+                         "score-Normal-Range":                          {
+                              "interval-Integer-Down-Limit": 0,
+                              "interval-Integer-Up-Limit": 0
+                         }
+                    }],
+                    "lab-Test-JA":                     [
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-530",
+                                   "code-Display-Name": "Anti-Ro/SSA [presence]"
+                              },
+                              "test-Outcome": true,
+                              "test-Date": "2009/--/--"
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-540",
+                                   "code-Display-Name": "Anti-La/SSB [presence]"
+                              },
+                              "test-Outcome": true,
+                              "test-Date": "2009/--/--"
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-521",
+                                   "code-Display-Name": "Antinuclear Antibodies (ANA) [presence]"
+                              },
+                              "test-Outcome": true,
+                              "test-Date": "2009/--/--"
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-522",
+                                   "code-Display-Name": "Antinuclear Antibodies (ANA) titer"
+                              },
+                              "test-Date": "2009/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "0.0015625",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-19",
+                                        "code-Display-Name": "#"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-511",
+                                   "code-Display-Name": "Rheumatoid Factor (RF) [Units/volume]"
+                              },
+                              "test-Date": "2009/--/--",
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-22",
+                                   "code-Display-Name": "Above Upper Normal Limit (UNL)",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Up-Limit": "15.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-06",
+                                        "code-Display-Name": "IU/mL"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-610",
+                                   "code-Display-Name": "C3 levels (Serum complement) [Mass/volume]"
+                              },
+                              "test-Date": "2009/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "157.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "75.0",
+                                   "interval-Amount-Up-Limit": "165.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-620",
+                                   "code-Display-Name": "C4 levels (Serum complement) [Mass/volume]"
+                              },
+                              "test-Date": "2009/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "34.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "14.0",
+                                   "interval-Amount-Up-Limit": "54.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-330",
+                                   "code-Display-Name": "Monoclonal M-component [presence] (in Serum)"
+                              },
+                              "test-Outcome": false,
+                              "test-Date": "2009/--/--"
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-322",
+                                   "code-Display-Name": "Immunoglobulin A (IgA) [Mass/volume]"
+                              },
+                              "test-Date": "2009/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "6.03",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-22",
+                                   "code-Display-Name": "Above Upper Normal Limit (UNL)",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "0.8",
+                                   "interval-Amount-Up-Limit": "4.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-323",
+                                   "code-Display-Name": "Immunoglobulin G (IgG) [Mass/volume]"
+                              },
+                              "test-Date": "2009/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "30.6",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-22",
+                                   "code-Display-Name": "Above Upper Normal Limit (UNL)",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "5.5",
+                                   "interval-Amount-Up-Limit": "16.5",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-325",
+                                   "code-Display-Name": "Immunoglobulin M (IgM) [Mass/volume]"
+                              },
+                              "test-Date": "2009/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "0.76",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "0.4",
+                                   "interval-Amount-Up-Limit": "2.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              }
+                         }
+                    ]
+               }
+          },
+                    {
+               "type": "Person",
+               "person-Unique-ID": "7",
+               "person-Date-Birth": "1962/--/--",
+               "person-SS-Symptoms-Onset": "1968/--/--",
+               "person-SS-Diagnosis": "2009/--/--",
+               "person-Cohort-Inclusion": "2010/--/--",
+               "POSITIVE-STMT":                {
+                    "biopsy-Test-JA": [                    {
+                         "type": "Biopsy",
+                         "test-CV":                          {
+                              "code-Value": "BIOPSY-13",
+                              "code-Display-Name": "Lymphoma [check]"
+                         },
+                         "test-Outcome": false,
+                         "test-Date": "2009/--/--",
+                         "biopsy-Type-CV":                          {
+                              "code-Value": "SAL-BIO-20",
+                              "code-Display-Name": "Minor Salivary Gland Biopsy"
+                         }
+                    }],
+                    "demographic-JA":                     [
+                                                  {
+                              "type": "Ethnicity",
+                              "ethnicity-CV":                               {
+                                   "code-Value": "ETHN-06",
+                                   "code-Display-Name": "Caucasian",
+                                   "hierarchical-Relationship": "ET"
+                              }
+                         },
+                                                  {
+                              "type": "Gender",
+                              "gender-CV":                               {
+                                   "code-Value": "SEX-02",
+                                   "code-Display-Name": "Female",
+                                   "hierarchical-Relationship": "ET"
+                              }
+                         }
+                    ],
+                    "questionnaire-JA": [                    {
+                         "type": "Questionnaire-Score",
+                         "score-CV":                          {
+                              "code-Value": "QUEST-010",
+                              "code-Display-Name": "EULAR Sjogren's syndrome Disease Activity Index (ESSDAI) score"
+                         },
+                         "completion-Date": "2009/--/--",
+                         "questionnaire-Score": 6,
+                         "score-Assessment-Code":                          {
+                              "code-Value": "ASSESS-22",
+                              "code-Display-Name": "Above Upper Normal Limit (UNL)"
+                         },
+                         "score-Normal-Range":                          {
+                              "interval-Integer-Down-Limit": 0,
+                              "interval-Integer-Up-Limit": 0
+                         }
+                    }],
+                    "lab-Test-JA":                     [
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-530",
+                                   "code-Display-Name": "Anti-Ro/SSA [presence]"
+                              },
+                              "test-Outcome": true,
+                              "test-Date": "2009/--/--"
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-540",
+                                   "code-Display-Name": "Anti-La/SSB [presence]"
+                              },
+                              "test-Outcome": true,
+                              "test-Date": "2009/--/--"
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-521",
+                                   "code-Display-Name": "Antinuclear Antibodies (ANA) [presence]"
+                              },
+                              "test-Outcome": true,
+                              "test-Date": "2009/--/--"
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-522",
+                                   "code-Display-Name": "Antinuclear Antibodies (ANA) titer"
+                              },
+                              "test-Date": "2009/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "0.0015625",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-19",
+                                        "code-Display-Name": "#"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-511",
+                                   "code-Display-Name": "Rheumatoid Factor (RF) [Units/volume]"
+                              },
+                              "test-Date": "2009/--/--",
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-22",
+                                   "code-Display-Name": "Above Upper Normal Limit (UNL)",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Up-Limit": "15.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-06",
+                                        "code-Display-Name": "IU/mL"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-610",
+                                   "code-Display-Name": "C3 levels (Serum complement) [Mass/volume]"
+                              },
+                              "test-Date": "2009/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "110.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "75.0",
+                                   "interval-Amount-Up-Limit": "165.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-620",
+                                   "code-Display-Name": "C4 levels (Serum complement) [Mass/volume]"
+                              },
+                              "test-Date": "2009/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "29.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "14.0",
+                                   "interval-Amount-Up-Limit": "54.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-330",
+                                   "code-Display-Name": "Monoclonal M-component [presence] (in Serum)"
+                              },
+                              "test-Outcome": false,
+                              "test-Date": "2009/--/--"
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-322",
+                                   "code-Display-Name": "Immunoglobulin A (IgA) [Mass/volume]"
+                              },
+                              "test-Date": "2009/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "2.96",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "0.8",
+                                   "interval-Amount-Up-Limit": "4.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-323",
+                                   "code-Display-Name": "Immunoglobulin G (IgG) [Mass/volume]"
+                              },
+                              "test-Date": "2009/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "15.5",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "5.5",
+                                   "interval-Amount-Up-Limit": "16.5",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-325",
+                                   "code-Display-Name": "Immunoglobulin M (IgM) [Mass/volume]"
+                              },
+                              "test-Date": "2009/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "1.06",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "0.4",
+                                   "interval-Amount-Up-Limit": "2.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              }
+                         }
+                    ]
+               },
+               "NEGATIVE-STMT": {"condition-JA": [               {
+                    "type": "Diagnosis",
+                    "diagnosis-CV":                     {
+                         "code-Value": "COND-121000",
+                         "code-Display-Name": "Cryoglobulinemic vasculitis"
+                    }
+               }]}
+          },
+                    {
+               "type": "Person",
+               "person-Unique-ID": "3",
+               "person-Date-Birth": "1972/--/--",
+               "person-SS-Symptoms-Onset": "1977/--/--",
+               "person-SS-Diagnosis": "2012/--/--",
+               "person-Cohort-Inclusion": "2018/--/--",
+               "POSITIVE-STMT":                {
+                    "biopsy-Test-JA": [                    {
+                         "type": "Biopsy",
+                         "test-CV":                          {
+                              "code-Value": "BIOPSY-13",
+                              "code-Display-Name": "Lymphoma [check]"
+                         },
+                         "test-Outcome": false,
+                         "test-Date": "2012/--/--",
+                         "biopsy-Type-CV":                          {
+                              "code-Value": "SAL-BIO-20",
+                              "code-Display-Name": "Minor Salivary Gland Biopsy"
+                         }
+                    }],
+                    "demographic-JA":                     [
+                                                  {
+                              "type": "Ethnicity",
+                              "ethnicity-CV":                               {
+                                   "code-Value": "ETHN-04",
+                                   "code-Display-Name": "Black or African American",
+                                   "hierarchical-Relationship": "ET"
+                              }
+                         },
+                                                  {
+                              "type": "Gender",
+                              "gender-CV":                               {
+                                   "code-Value": "SEX-02",
+                                   "code-Display-Name": "Female",
+                                   "hierarchical-Relationship": "ET"
+                              }
+                         }
+                    ],
+                    "questionnaire-JA": [                    {
+                         "type": "Questionnaire-Score",
+                         "score-CV":                          {
+                              "code-Value": "QUEST-010",
+                              "code-Display-Name": "EULAR Sjogren's syndrome Disease Activity Index (ESSDAI) score"
+                         },
+                         "completion-Date": "2012/--/--",
+                         "questionnaire-Score": 6,
+                         "score-Assessment-Code":                          {
+                              "code-Value": "ASSESS-22",
+                              "code-Display-Name": "Above Upper Normal Limit (UNL)"
+                         },
+                         "score-Normal-Range":                          {
+                              "interval-Integer-Down-Limit": 0,
+                              "interval-Integer-Up-Limit": 0
+                         }
+                    }],
+                    "lab-Test-JA":                     [
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-530",
+                                   "code-Display-Name": "Anti-Ro/SSA [presence]"
+                              },
+                              "test-Outcome": true,
+                              "test-Date": "2012/--/--"
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-540",
+                                   "code-Display-Name": "Anti-La/SSB [presence]"
+                              },
+                              "test-Outcome": false,
+                              "test-Date": "2012/--/--"
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-521",
+                                   "code-Display-Name": "Antinuclear Antibodies (ANA) [presence]"
+                              },
+                              "test-Outcome": true,
+                              "test-Date": "2012/--/--"
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-522",
+                                   "code-Display-Name": "Antinuclear Antibodies (ANA) titer"
+                              },
+                              "test-Date": "2012/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "0.0015625",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-19",
+                                        "code-Display-Name": "#"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-511",
+                                   "code-Display-Name": "Rheumatoid Factor (RF) [Units/volume]"
+                              },
+                              "test-Date": "2012/--/--",
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-22",
+                                   "code-Display-Name": "Above Upper Normal Limit (UNL)",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Up-Limit": "15.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-06",
+                                        "code-Display-Name": "IU/mL"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-610",
+                                   "code-Display-Name": "C3 levels (Serum complement) [Mass/volume]"
+                              },
+                              "test-Date": "2012/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "101.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "75.0",
+                                   "interval-Amount-Up-Limit": "165.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-620",
+                                   "code-Display-Name": "C4 levels (Serum complement) [Mass/volume]"
+                              },
+                              "test-Date": "2012/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "19.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "14.0",
+                                   "interval-Amount-Up-Limit": "54.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-330",
+                                   "code-Display-Name": "Monoclonal M-component [presence] (in Serum)"
+                              },
+                              "test-Outcome": true,
+                              "test-Date": "2012/--/--"
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-322",
+                                   "code-Display-Name": "Immunoglobulin A (IgA) [Mass/volume]"
+                              },
+                              "test-Date": "2012/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "3.07",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "0.8",
+                                   "interval-Amount-Up-Limit": "4.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-323",
+                                   "code-Display-Name": "Immunoglobulin G (IgG) [Mass/volume]"
+                              },
+                              "test-Date": "2012/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "21.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-22",
+                                   "code-Display-Name": "Above Upper Normal Limit (UNL)",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "5.5",
+                                   "interval-Amount-Up-Limit": "16.5",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-325",
+                                   "code-Display-Name": "Immunoglobulin M (IgM) [Mass/volume]"
+                              },
+                              "test-Date": "2012/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "0.76",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "0.4",
+                                   "interval-Amount-Up-Limit": "2.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              }
+                         }
+                    ]
+               },
+               "NEGATIVE-STMT": {"condition-JA": [               {
+                    "type": "Diagnosis",
+                    "diagnosis-CV":                     {
+                         "code-Value": "COND-121000",
+                         "code-Display-Name": "Cryoglobulinemic vasculitis"
+                    }
+               }]}
+          },
+                    {
+               "type": "Person",
+               "person-Unique-ID": "1",
+               "person-Date-Birth": "1955/--/--",
+               "person-SS-Symptoms-Onset": "1958/--/--",
+               "person-SS-Diagnosis": "2010/--/--",
+               "person-Cohort-Inclusion": "2018/--/--",
+               "POSITIVE-STMT":                {
+                    "biopsy-Test-JA": [                    {
+                         "type": "Biopsy",
+                         "test-CV":                          {
+                              "code-Value": "BIOPSY-13",
+                              "code-Display-Name": "Lymphoma [check]"
+                         },
+                         "test-Outcome": false,
+                         "test-Date": "2010/--/--",
+                         "biopsy-Type-CV":                          {
+                              "code-Value": "SAL-BIO-20",
+                              "code-Display-Name": "Minor Salivary Gland Biopsy"
+                         }
+                    }],
+                    "demographic-JA":                     [
+                                                  {
+                              "type": "Ethnicity",
+                              "ethnicity-CV":                               {
+                                   "code-Value": "ETHN-06",
+                                   "code-Display-Name": "Caucasian",
+                                   "hierarchical-Relationship": "ET"
+                              }
+                         },
+                                                  {
+                              "type": "Gender",
+                              "gender-CV":                               {
+                                   "code-Value": "SEX-02",
+                                   "code-Display-Name": "Female",
+                                   "hierarchical-Relationship": "ET"
+                              }
+                         }
+                    ],
+                    "questionnaire-JA": [                    {
+                         "type": "Questionnaire-Score",
+                         "score-CV":                          {
+                              "code-Value": "QUEST-010",
+                              "code-Display-Name": "EULAR Sjogren's syndrome Disease Activity Index (ESSDAI) score"
+                         },
+                         "completion-Date": "2010/--/--",
+                         "questionnaire-Score": 9,
+                         "score-Assessment-Code":                          {
+                              "code-Value": "ASSESS-22",
+                              "code-Display-Name": "Above Upper Normal Limit (UNL)"
+                         },
+                         "score-Normal-Range":                          {
+                              "interval-Integer-Down-Limit": 0,
+                              "interval-Integer-Up-Limit": 0
+                         }
+                    }],
+                    "lab-Test-JA":                     [
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-530",
+                                   "code-Display-Name": "Anti-Ro/SSA [presence]"
+                              },
+                              "test-Outcome": true,
+                              "test-Date": "2010/--/--"
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-540",
+                                   "code-Display-Name": "Anti-La/SSB [presence]"
+                              },
+                              "test-Outcome": false,
+                              "test-Date": "2010/--/--"
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-521",
+                                   "code-Display-Name": "Antinuclear Antibodies (ANA) [presence]"
+                              },
+                              "test-Outcome": true,
+                              "test-Date": "2010/--/--"
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-522",
+                                   "code-Display-Name": "Antinuclear Antibodies (ANA) titer"
+                              },
+                              "test-Date": "2010/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "0.0015625",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-19",
+                                        "code-Display-Name": "#"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-511",
+                                   "code-Display-Name": "Rheumatoid Factor (RF) [Units/volume]"
+                              },
+                              "test-Date": "2010/--/--",
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-22",
+                                   "code-Display-Name": "Above Upper Normal Limit (UNL)",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Up-Limit": "15.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-06",
+                                        "code-Display-Name": "IU/mL"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-610",
+                                   "code-Display-Name": "C3 levels (Serum complement) [Mass/volume]"
+                              },
+                              "test-Date": "2010/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "112.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "75.0",
+                                   "interval-Amount-Up-Limit": "165.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-620",
+                                   "code-Display-Name": "C4 levels (Serum complement) [Mass/volume]"
+                              },
+                              "test-Date": "2010/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "28.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "14.0",
+                                   "interval-Amount-Up-Limit": "54.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-08",
+                                        "code-Display-Name": "mg/dL"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-330",
+                                   "code-Display-Name": "Monoclonal M-component [presence] (in Serum)"
+                              },
+                              "test-Outcome": false,
+                              "test-Date": "2010/--/--"
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-322",
+                                   "code-Display-Name": "Immunoglobulin A (IgA) [Mass/volume]"
+                              },
+                              "test-Date": "2010/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "1.86",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "0.8",
+                                   "interval-Amount-Up-Limit": "4.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-323",
+                                   "code-Display-Name": "Immunoglobulin G (IgG) [Mass/volume]"
+                              },
+                              "test-Date": "2010/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "14.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "5.5",
+                                   "interval-Amount-Up-Limit": "16.5",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              }
+                         },
+                                                  {
+                              "type": "Laboratory-Test",
+                              "test-CV":                               {
+                                   "code-Value": "BLOOD-325",
+                                   "code-Display-Name": "Immunoglobulin M (IgM) [Mass/volume]"
+                              },
+                              "test-Date": "2010/--/--",
+                              "test-Outcome":                               {
+                                   "amount-Value": "0.95",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              },
+                              "test-Outcome-Assessment-Code":                               {
+                                   "code-Value": "ASSESS-10",
+                                   "code-Display-Name": "Normal",
+                                   "hierarchical-Relationship": "ET"
+                              },
+                              "test-Normal-Range":                               {
+                                   "interval-Amount-Down-Limit": "0.4",
+                                   "interval-Amount-Up-Limit": "2.0",
+                                   "amount-Unit-CV":                                    {
+                                        "code-Value": "UNITEXP-05",
+                                        "code-Display-Name": "g/L"
+                                   }
+                              }
+                         }
+                    ]
+               }
+          }
+     ],
+     "file": "File automatically generated by the Cohort Data Harmonization tool (version: 0.9) developed by ICCS/NTUA within European Project HarmonicSS."
+}

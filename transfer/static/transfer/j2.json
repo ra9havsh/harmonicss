@@ -1,0 +1,159 @@
+{
+     "date-Harmonization-Process-Run": "2019/07/23",
+     "cohort":      {
+          "term-JA":           [
+                              {
+                    "code": "Gender",
+                    "label": "Gender"
+               },
+                              {
+                    "code": "Laboratory-Test",
+                    "label": "Laboratory Examination / Test"
+               },
+                              {
+                    "code": "Person",
+                    "label": "Person"
+               },
+                              {
+                    "code": "SEX-01",
+                    "label": "Male"
+               },
+                              {
+                    "code": "SEX-02",
+                    "label": "Female"
+               },
+                              {
+                    "code": "URINE-110",
+                    "label": "Urine pH"
+               },
+                              {
+                    "code": "URINE-130",
+                    "label": "Urine Specific Gravity"
+               }
+          ],
+          "number-Patients": 4,
+          "number-Fields": 98,
+          "number-Fields-Mapped": 10
+     },
+     "person-JA":      [
+                    {
+               "type": "Person",
+               "person-Unique-ID": "A01",
+               "person-Date-Birth": "1971/--/--",
+               "person-SS-Symptoms-Onset": "2011/--/--",
+               "person-SS-Diagnosis": "2013/--/--",
+               "POSITIVE-STMT": {"demographic-JA": [               {
+                    "type": "Gender",
+                    "gender-CV":                     {
+                         "code-Value": "SEX-02",
+                         "code-Display-Name": "Female",
+                         "hierarchical-Relationship": "ET"
+                    }
+               }]}
+          },
+                    {
+               "type": "Person",
+               "person-Unique-ID": "Bxyz",
+               "person-Date-Birth": "1976/--/--",
+               "person-SS-Symptoms-Onset": "2006/--/--",
+               "person-SS-Diagnosis": "2009/--/--",
+               "POSITIVE-STMT":                {
+                    "lab-Test-JA": [                    {
+                         "type": "Laboratory-Test",
+                         "test-CV":                          {
+                              "code-Value": "URINE-110",
+                              "code-Display-Name": "Urine pH"
+                         },
+                         "test-Date": "2010/--/--",
+                         "test-Outcome":                          {
+                              "amount-Value": "7.0",
+                              "amount-Unit-CV":                               {
+                                   "code-Value": "UNITEXP-14",
+                                   "code-Display-Name": "pH"
+                              }
+                         },
+                         "test-Outcome-Assessment-Code":                          {
+                              "code-Value": "ASSESS-22",
+                              "code-Display-Name": "Above Upper Normal Limit (UNL)"
+                         },
+                         "test-Normal-Range":                          {
+                              "interval-Amount-Down-Limit": "0.0",
+                              "interval-Amount-Up-Limit": "6.0",
+                              "amount-Unit-CV":                               {
+                                   "code-Value": "UNITEXP-14",
+                                   "code-Display-Name": "pH"
+                              }
+                         }
+                    }],
+                    "demographic-JA": [                    {
+                         "type": "Gender",
+                         "gender-CV":                          {
+                              "code-Value": "SEX-02",
+                              "code-Display-Name": "Female",
+                              "hierarchical-Relationship": "ET"
+                         }
+                    }]
+               }
+          },
+                    {
+               "type": "Person",
+               "person-Unique-ID": "Ccccccc",
+               "person-Date-Birth": "1960/--/--",
+               "person-SS-Symptoms-Onset": "2012/--/--",
+               "person-SS-Diagnosis": "2013/--/--",
+               "POSITIVE-STMT": {"demographic-JA": [               {
+                    "type": "Gender",
+                    "gender-CV":                     {
+                         "code-Value": "SEX-02",
+                         "code-Display-Name": "Female",
+                         "hierarchical-Relationship": "ET"
+                    }
+               }]}
+          },
+                    {
+               "type": "Person",
+               "person-Unique-ID": "D01dd",
+               "person-Date-Birth": "1944/--/--",
+               "person-SS-Symptoms-Onset": "1978/--/--",
+               "person-SS-Diagnosis": "1992/--/--",
+               "POSITIVE-STMT":                {
+                    "lab-Test-JA": [                    {
+                         "type": "Laboratory-Test",
+                         "test-CV":                          {
+                              "code-Value": "URINE-110",
+                              "code-Display-Name": "Urine pH"
+                         },
+                         "test-Date": "2007/--/--",
+                         "test-Outcome":                          {
+                              "amount-Value": "8.0",
+                              "amount-Unit-CV":                               {
+                                   "code-Value": "UNITEXP-14",
+                                   "code-Display-Name": "pH"
+                              }
+                         },
+                         "test-Outcome-Assessment-Code":                          {
+                              "code-Value": "ASSESS-22",
+                              "code-Display-Name": "Above Upper Normal Limit (UNL)"
+                         },
+                         "test-Normal-Range":                          {
+                              "interval-Amount-Down-Limit": "0.0",
+                              "interval-Amount-Up-Limit": "6.0",
+                              "amount-Unit-CV":                               {
+                                   "code-Value": "UNITEXP-14",
+                                   "code-Display-Name": "pH"
+                              }
+                         }
+                    }],
+                    "demographic-JA": [                    {
+                         "type": "Gender",
+                         "gender-CV":                          {
+                              "code-Value": "SEX-02",
+                              "code-Display-Name": "Female",
+                              "hierarchical-Relationship": "ET"
+                         }
+                    }]
+               }
+          }
+     ],
+     "file": "File automatically generated by the Cohort Data Harmonization tool (version: 0.9) developed by ICCS/NTUA within European Project HarmonicSS."
+}
