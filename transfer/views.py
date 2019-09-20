@@ -513,11 +513,11 @@ def homepage(request):
             try:
                 driver.get(url)
                 element = WebDriverWait(driver, 30).until(
-                    EC.presence_of_element_located((By.CLASS_NAME, "gb_e"))
+                    EC.presence_of_element_located((By.TAG_NAME, "pre"))
                 )
 
                 try:
-                    pre_tag = driver.find_element_by_class_name('gb_e')
+                    pre_tag = driver.find_element_by_tag_name('pre')
                 except NoSuchElementException:
                     pre_tag = type('obj', (object,), {'text' : ''})
 
