@@ -313,7 +313,8 @@ def pregnancy_smoking(patient, preg_smoke):
     return trace
 
 def condition_test(patient, condition):
-    for con in condition:
+    trace = ""
+    for no,con in enumerate(condition):
         if con['type']=='Symptom-or-Sign':
             symptom_sign= None
             if 'symptom-sign-CV' in con:
@@ -331,7 +332,10 @@ def condition_test(patient, condition):
             else:
                 observe_date = None
 
-            CondSymptom.objects.get_or_create(patient=patient,condition=symptom_sign,observe_date=observe_date)
+            symp = CondSymptom.objects.get_or_create(patient=patient,condition=symptom_sign,observe_date=observe_date)
+            trace = trace + str(no) + ". transfer Symptoms-or-Signs(" + str(patient.id) + "," + str(symptom_sign)+ "," + str(observe_date) + ")<br> " + \
+                    "&nbsp;&nbsp;&nbsp; to CondSymptoms(patient,condition,observe_date) of id " \
+                    + str(symp[0].id) + ".<br>"
 
         if con['type']=='Diagnosis':
             symptom_sign= None
@@ -346,15 +350,25 @@ def condition_test(patient, condition):
                 diagnosis_date = None
 
             diagnosis = CondDiagnosis.objects.get_or_create(patient=patient,condition=medical_condition,diagnosis_date=diagnosis_date)
+            trace = trace + str(no) + ". transfer Diagonsis(" + str(patient.id) + "," + str(medical_condition) + "," + \
+                    str(diagnosis_date) + ")<br> " + \
+                    "&nbsp;&nbsp;&nbsp; to CondDiagnosis(patient,condition,diagnosis_date) of id " \
+                    + str(diagnosis[0].id) + ".<br>"
 
             if 'diagnosis-Organ-CV-JA' in con:
                 for org in con['diagnosis-Organ-CV-JA']:
                     if 'code-Value' in org and 'code-Display-Name' in org:
                         organ=voc_lymphoma_organ(org['code-Value'],org['code-Display-Name'])
-                        CondDiagnosisOrgans.objects.get_or_create(diagnosis=diagnosis[0],organ=organ)
+                        diagnosis_organ = CondDiagnosisOrgans.objects.get_or_create(diagnosis=diagnosis[0],organ=organ)
+                        trace = trace + str(no) + ". transfer DiagonisOrgan(" + str(diagnosis[0].id) + "," + str(organ) + ")<br> " + \
+                                "&nbsp;&nbsp;&nbsp; to CondDiagnosisOrgans(diagnosis,organ) of id " \
+                                + str(diagnosis_organ[0].id) + ".<br>"
+
+    return trace
 
 def intervention_test(patient,intervation):
-    for intv in intervation:
+    trace = ""
+    for no,intv in enumerate(intervation):
         if intv['type'] == 'Medication':
             medication = None
             if 'medication-CV' in intv:
@@ -370,10 +384,15 @@ def intervention_test(patient,intervation):
             else:
                 period = None
 
-            IntervMedication.objects.get_or_create(patient=patient,medication=medication,period=period)
+            med = IntervMedication.objects.get_or_create(patient=patient,medication=medication,period=period)
+            trace = trace + str(no) + ". transfer Medication(" + str(patient.id) + "," + str(medication)+ "," + str(period) + ")<br> " + \
+                    "&nbsp;&nbsp;&nbsp; to InterMedication(patient,medication,period) of id " \
+                    + str(med[0].id) + ".<br>"
+    return trace
 
 def questionnaire_test(patient,questionnaire):
-    for ques in questionnaire:
+    trace = ""
+    for no,ques in enumerate(questionnaire):
         if ques['type'] == 'Questionnaire-Score':
             if 'score-CV' in ques:
                 score = voc_questionnaire(ques['score-CV']['code-Value'],ques['score-CV']['code-Display-Name'])
@@ -402,7 +421,12 @@ def questionnaire_test(patient,questionnaire):
             else:
                 assessment = None
 
-            ExamQuestionnaireScore.objects.get_or_create(patient=patient,score=score,value=score_value,questionnaire_date=questionnaire_date,assessment=assessment,normal_range=normal_range)
+            ques = ExamQuestionnaireScore.objects.get_or_create(patient=patient,score=score,value=score_value,questionnaire_date=questionnaire_date,assessment=assessment,normal_range=normal_range)
+            trace = trace + str(no) + ". transfer Questionnaire-Score(" + str(patient.id) + "," + str(score) + "," + str(score_value)+ "," + str(questionnaire_date) + \
+                    "," + str(assessment)+ "," + str(normal_range)+")<br> " + \
+                    "&nbsp;&nbsp;&nbsp; to ExamQuestionnaireScore(patient,medication,period) of id " \
+                    + str(ques[0].id) + ".<br>"
+    return trace
 
 def positive_stmt(patient,pos_stmt):
     trace=""
@@ -432,11 +456,23 @@ def positive_stmt(patient,pos_stmt):
                 pregsmok = "no data in Pregnancy-Smoking test of  patient->id" + str(patient.id) + "<br>"
             trace = trace + pregsmok
         elif pos == "condition-JA":
-            condition_test(patient,pos_stmt[pos])
+            con = condition_test(patient,pos_stmt[pos])
+            trace = trace + "<br><b>For Condition test of patient->id " + str(patient.id) + ":</b><br>"
+            if not len(con) > 0:
+                con = "no data in Condition test of  patient->id" + str(patient.id) + "<br>"
+            trace = trace + con
         elif pos == "intervention-JA":
-            intervention_test(patient,pos_stmt[pos])
+            inter = intervention_test(patient,pos_stmt[pos])
+            trace = trace + "<br><b>For Intervention of patient->id " + str(patient.id) + ":</b><br>"
+            if not len(inter) > 0:
+                inter = "no data in intervention of  patient->id" + str(patient.id) + "<br>"
+            trace = trace + inter
         elif pos == "questionnaire-JA":
-            questionnaire_test(patient, pos_stmt[pos])
+            ques = questionnaire_test(patient, pos_stmt[pos])
+            trace = trace + "<br><b>For Questionnaire of patient->id " + str(patient.id) + ":</b><br>"
+            if not len(ques) > 0:
+                ques = "no data in Questionnaire of  patient->id" + str(patient.id) + "<br>"
+            trace = trace + ques
         else:
             print(pos)
 
@@ -471,11 +507,23 @@ def negative_stmt(patient,neg_stmt):
                 pregsmok = "no data in Pregnancy-Smoking test of  patient->id" + str(patient.id) + "<br>"
             trace = trace + pregsmok
         elif neg == "condition-JA":
-            condition_test(patient,neg_stmt[neg])
+            con = condition_test(patient,neg_stmt[neg])
+            trace = trace + "<br><b>For Condition test of patient->id " + str(patient.id) + ":</b><br>"
+            if not len(con) > 0:
+                con = "no data in Condition test of  patient->id" + str(patient.id) + "<br>"
+            trace = trace + con
         elif neg == "intervention-JA":
-            intervention_test(patient,neg_stmt[neg])
+            inter = intervention_test(patient,neg_stmt[neg])
+            trace = trace + "<br><b>For Intervention of patient->id " + str(patient.id) + ":</b><br>"
+            if not len(inter) > 0:
+                inter = "no data in intervention of  patient->id" + str(patient.id) + "<br>"
+            trace = trace + inter
         elif neg == "questionnaire-JA":
-            questionnaire_test(patient,neg_stmt[neg])
+            ques = questionnaire_test(patient,neg_stmt[neg])
+            trace = trace + "<br><b>For Questionnaire of patient->id " + str(patient.id) + ":</b><br>"
+            if not len(ques) > 0:
+                ques = "no data in Questionnaire of  patient->id" + str(patient.id) + "<br>"
+            trace = trace + ques
         else:
             print(neg)
 
@@ -620,8 +668,23 @@ def homepage(request):
                 cohort_list=results["cohort"]["term-JA"]
                 personJA=results["person-JA"]
 
-                cohort(cohort_list)
-                person_JA(personJA)
+                t = cohort(cohort_list)
+                tt = person_JA(personJA)
+
+                request.session['trace'] = ""
+
+                trace = request.session.get('trace')
+                if len(t) > 0:
+                    trace = trace + t
+                else:
+                    trace = trace + "no data in cohort"
+
+                if len(tt) > 0:
+                    trace = trace + tt
+                else:
+                    trace = trace + "no data in person-JA"
+
+                request.session['trace'] = trace
                 driver.quit()
             except TimeoutException and WebDriverException:
                 return redirect("transfer:message",'error')
@@ -648,31 +711,8 @@ def homepage(request):
 
 def transfer(request,msg):
     if str(msg)=='success':
-        file = os.path.join(settings.BASE_DIR, 'transfer/static/transfer/j0.json')
-        json_file = open(file)
-        results = json.load(json_file)
-        json_file.close()
-        cohort_list=results["cohort"]["term-JA"]
-        personJA=results["person-JA"]
-
-        t=cohort(cohort_list)
-        tt=person_JA(personJA)
-
-        request.session['trace'] = ""
-        trace =  request.session.get('trace')
-        if len(t)>0:
-            trace = trace+t
-        else:
-            trace = trace + "no data in cohort"
-
-        if len(tt)>0:
-            trace = trace+tt
-        else:
-            trace = trace + "no data in person-JA"
-
-        request.session['trace']=trace
         trace = request.session.get('trace')
-
+        request.session['trace'] = ""
         return render(request, 'transfer/transfer.html', {'success': 'Data Tranferred successfully.....','trace':trace})
     elif str(msg)=='error':
         return render(request, 'transfer/transfer.html', {'error': 'Sorry time out exception occurred, or there may be something wrong'})
