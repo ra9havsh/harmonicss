@@ -229,13 +229,15 @@ def biopsy_test(patient,biopsy):
                                                  assessment=assessment,outcome_check=outcome_check,biopsy_date=biopsy_date,visit=visit)
 
             trace = trace + str(no) + ". transfer biopsy(" + str(patient.id) + "," + str(biopsy) + "," + str(test) + "," + str(outcome_amount) + \
-                    "," + str(normal_range) + "," + str(assessment) + "," + str(outcome_check) + "," + str(biopsy_date) + ")<br> to Exam_biopsy(patient,biopsy,test,outcome_amount,normal_range,assessment,outcome_check,biopsy_date) of id " \
+                    "," + str(normal_range) + "," + str(assessment) + "," + str(outcome_check) + "," + str(biopsy_date) + ")<br> "+ \
+                    "&nbsp;&nbsp;&nbsp; to Exam_biopsy(patient,biopsy,test,outcome_amount,normal_range,assessment,outcome_check,biopsy_date) of id " \
                     + str(exambiopsy[0].id) + ".<br>"
 
     return trace
 
 def laboratory_test(patient, laboratory):
-    for lab in laboratory:
+    trace = ""
+    for no,lab in enumerate(laboratory):
         test = voc_lab_test(lab['test-CV']['code-Value'],lab['test-CV']['code-Display-Name'])
 
         if 'test-Date' in lab:
@@ -269,25 +271,46 @@ def laboratory_test(patient, laboratory):
                 outcome_assessment = voc_assessment(lab['test-Outcome-Assessment-Code']['code-Value'],lab['test-Outcome-Assessment-Code']['code-Display-Name'])
                 # print(outcome_assessment.id)
 
-            ExamLabTest.objects.get_or_create(patient=patient,test=test,outcome_amount=outcome_amount,normal_range=normal_range,outcome_assessment=outcome_assessment,outcome_term_id=outcome_term_id,sample_date=sample_date,visit=visit)
+            lab_test = ExamLabTest.objects.get_or_create(patient=patient,test=test,outcome_amount=outcome_amount,normal_range=normal_range,outcome_assessment=outcome_assessment,outcome_term_id=outcome_term_id,sample_date=sample_date,visit=visit)
+
+            trace = trace + str(no) + ". transfer Laboratory(" + str(patient.id) + "," + str(test) + "," + str(outcome_amount) + \
+                    "," + str(normal_range) + "," + str(outcome_assessment) + "," + str(outcome_term_id) + "," + str(sample_date)+ "," + str(visit) + ")<br> " + \
+                    "&nbsp;&nbsp;&nbsp; to Exam_Lab_Test(patient,test,outcome_amount,normal_range,outcome_assessment,outcome_term_id,sample_data,visit) of id " \
+                    + str(lab_test[0].id) + ".<br>"
+
+    return trace
 
 def demographic(patient, demographic):
-    for demo in demographic:
+    trace = ""
+    for no,demo in enumerate(demographic):
         if demo['type']=='Ethnicity':
             if 'ethnicity-CV' in demo:
                 ethnicity = voc_ethnicity(demo['ethnicity-CV']['code-Value'],demo['ethnicity-CV']['code-Display-Name'])
-                DemoEthnicityData.objects.get_or_create(patient=patient,ethnicity=ethnicity)
+                eth = DemoEthnicityData.objects.get_or_create(patient=patient,ethnicity=ethnicity)
+                trace = trace + str(no) + ". transfer Ethnicity(" + str(patient.id) + "," + str(ethnicity) + ")<br> " + \
+                        "&nbsp;&nbsp;&nbsp; to Demo_Ethnicity_Data(patient,ethnicity) of id " \
+                        + str(eth[0].id) + ".<br>"
         elif demo['type']=='Gender':
             if 'gender-CV' in demo:
                 sex = voc_sex(demo['gender-CV']['code-Value'], demo['gender-CV']['code-Display-Name'])
-                DemoSexData.objects.get_or_create(patient=patient, sex=sex)
+                gender = DemoSexData.objects.get_or_create(patient=patient, sex=sex)
+                trace = trace + str(no) + ". transfer Gender(" + str(patient.id) + "," + str(sex) + ")<br> " + \
+                        "&nbsp;&nbsp;&nbsp; to Demo_Ethnicity_Data(patient,ethnicity) of id " \
+                        + str(gender[0].id) + ".<br>"
+
+    return trace
 
 def pregnancy_smoking(patient, preg_smoke):
-    for pregsmk in preg_smoke:
+    trace = ""
+    for no,pregsmk in enumerate(preg_smoke):
         if pregsmk['type']=='Tobacco-Consumption':
             if 'tobacco-Consumption-Status-CV' in pregsmk:
                 smoking_status = voc_smoking_status(pregsmk['tobacco-Consumption-Status-CV']['code-Value'],pregsmk['tobacco-Consumption-Status-CV']['code-Display-Name'])
-                LifestyleSmoking.objects.get_or_create(patient=patient,status=smoking_status)
+                lifestyle = LifestyleSmoking.objects.get_or_create(patient=patient,status=smoking_status)
+                trace = trace + str(no) + ". transfer Tobacco-consumption(" + str(patient.id) + "," + str(smoking_status) + ")<br> " + \
+                        "&nbsp;&nbsp;&nbsp; to LifeStyleSmoking(patient,status) of id " \
+                        + str(lifestyle[0].id) + ".<br>"
+    return trace
 
 def condition_test(patient, condition):
     for con in condition:
@@ -386,16 +409,28 @@ def positive_stmt(patient,pos_stmt):
     for pos in pos_stmt:
         if pos == "biopsy-Test-JA":
             bio = biopsy_test(patient,pos_stmt[pos])
-            trace = "<br><b>For biopsy test of patient->id " + str(patient.id) + ":</b><br>"
+            trace = trace+"<br><b>For biopsy test of patient->id " + str(patient.id) + ":</b><br>"
             if not len(bio) > 0:
                 bio = "no data in biopsy test of  patient->id" + str(patient.id) + "<br>"
             trace = trace+bio
         elif pos == "lab-Test-JA":
-            laboratory_test(patient,pos_stmt[pos])
+            lab_test = laboratory_test(patient,pos_stmt[pos])
+            trace = trace+"<br><b>For Laboratory test of patient->id " + str(patient.id) + ":</b><br>"
+            if not len(lab_test) > 0:
+                lab_test = "no data in Laboratory test of  patient->id" + str(patient.id) + "<br>"
+            trace = trace + lab_test
         elif pos == "demographic-JA":
-            demographic(patient,pos_stmt[pos])
+            demo = demographic(patient,pos_stmt[pos])
+            trace = trace + "<br><b>For Demographic test of patient->id " + str(patient.id) + ":</b><br>"
+            if not len(demo) > 0:
+                demo = "no data in Demographic test of  patient->id" + str(patient.id) + "<br>"
+            trace = trace + demo
         elif pos == "pregnancy-smoking-JA":
-            pregnancy_smoking(patient,pos_stmt[pos])
+            pregsmok = pregnancy_smoking(patient,pos_stmt[pos])
+            trace = trace + "<br><b>For Pregnancy-Smoking test of patient->id " + str(patient.id) + ":</b><br>"
+            if not len(pregsmok) > 0:
+                pregsmok = "no data in Pregnancy-Smoking test of  patient->id" + str(patient.id) + "<br>"
+            trace = trace + pregsmok
         elif pos == "condition-JA":
             condition_test(patient,pos_stmt[pos])
         elif pos == "intervention-JA":
@@ -408,15 +443,33 @@ def positive_stmt(patient,pos_stmt):
     return trace
 
 def negative_stmt(patient,neg_stmt):
+    trace = ""
     for neg in neg_stmt:
         if neg == "biopsy-Test-JA":
             biopsy_test(patient,neg_stmt[neg])
+            bio = biopsy_test(patient, neg_stmt[neg])
+            trace = trace+ "<br><b>For biopsy test of patient->id " + str(patient.id) + ":</b><br>"
+            if not len(bio) > 0:
+                bio = "no data in biopsy test of  patient->id" + str(patient.id) + "<br>"
+            trace = trace + bio
         elif neg == "lab-Test-JA":
-            laboratory_test(patient,neg_stmt[neg])
+            lab_test = laboratory_test(patient, neg_stmt[neg])
+            trace = trace + "<br><b>For Laboratory test of patient->id " + str(patient.id) + ":</b><br>"
+            if not len(lab_test) > 0:
+                lab_test = "no data in Laboratory test of  patient->id" + str(patient.id) + "<br>"
+            trace = trace + lab_test
         elif neg == "demographic-JA":
-            demographic(patient,neg_stmt[neg])
+            demo = demographic(patient, neg_stmt[neg])
+            trace = trace + "<br><b>For Demographic test of patient->id " + str(patient.id) + ":</b><br>"
+            if not len(demo) > 0:
+                demo = "no data in Demographic test of  patient->id" + str(patient.id) + "<br>"
+            trace = trace + demo
         elif neg == "pregnancy-smoking-JA":
-            pregnancy_smoking(patient,neg_stmt[neg])
+            pregsmok = pregnancy_smoking(patient,neg_stmt[neg])
+            trace = trace + "<br><b>For Pregnancy-Smoking test of patient->id " + str(patient.id) + ":</b><br>"
+            if not len(pregsmok) > 0:
+                pregsmok = "no data in Pregnancy-Smoking test of  patient->id" + str(patient.id) + "<br>"
+            trace = trace + pregsmok
         elif neg == "condition-JA":
             condition_test(patient,neg_stmt[neg])
         elif neg == "intervention-JA":
@@ -425,6 +478,8 @@ def negative_stmt(patient,neg_stmt):
             questionnaire_test(patient,neg_stmt[neg])
         else:
             print(neg)
+
+    return trace
 
 def patient_date(date):
     if date is not None:
@@ -493,7 +548,10 @@ def person_JA(personJA):
                 ","+str(person_SS_D)+") to patient(id-"+str(patient_obj.id)+",uid,dateofbirth,ss-sym-onset,ss-diagnosis).</b><br>"
 
         if 'POSITIVE-STMT' in p:
-            pos = positive_stmt(patient_obj,p['POSITIVE-STMT'])
+
+            pos = "<font size='4'><b>For positive statement:</b></font><br>"
+
+            pos = pos + positive_stmt(patient_obj,p['POSITIVE-STMT'])
 
             if not len(pos)>0:
                 pos = "no data in positive statement of patient of id "+str(patient_obj.id)+"<br>"
@@ -501,9 +559,17 @@ def person_JA(personJA):
             pos = "no data in positive statement.<br>"
 
         if 'NEGATIVE-STMT' in p:
-            negative_stmt(patient_obj,p['NEGATIVE-STMT'])
+            neg = "<br><font size='4'><b>For negative statement:</b></font><br>"
+            neg = neg + negative_stmt(patient_obj,p['NEGATIVE-STMT'])
+
+            if not len(neg)>0:
+                neg = "no data in positive statement of patient of id "+str(patient_obj.id)+"<br>"
+
+        else:
+            neg =  "no data in negative statement"
 
         trace = trace+pos
+        trace = trace+neg
 
     return trace
 
