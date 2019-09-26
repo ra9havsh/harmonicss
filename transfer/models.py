@@ -10,6 +10,9 @@ class Cohort(models.Model):
         managed = True
         db_table = 'cohort'
 
+    def __str__(self):
+        return 'cohort('+str(self.id) + ',' + str(self.parameter)+ ',' + str(self.value)+')'
+
 
 class CondDiagnosis(models.Model):
     id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -145,6 +148,9 @@ class DtAmount(models.Model):
         managed = True
         db_table = 'dt_amount'
 
+    def __str__(self):
+        return 'DtAmount('+str(self.id) + ',' + str(self.value)+ ',' + str(self.unit)+')'
+
 
 class DtAmountRange(models.Model):
     id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -155,6 +161,9 @@ class DtAmountRange(models.Model):
     class Meta:
         managed = True
         db_table = 'dt_amount_range'
+
+    def __str__(self):
+        return 'DtAmountRange('+str(self.id) + ',' + str(self.value1)+ ',' + str(self.value2)+',' + str(self.unit)+')'
 
 
 class DtDate(models.Model):
@@ -169,6 +178,8 @@ class DtDate(models.Model):
         managed = True
         db_table = 'dt_date'
 
+    def __str__(self):
+        return 'DtDate('+str(self.id) + ',' + str(self.year)+ '/' + str(self.month)+'/' + str(self.day)+')'
 
 class DtIntRange(models.Model):
     id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -179,6 +190,8 @@ class DtIntRange(models.Model):
         managed = True
         db_table = 'dt_int_range'
 
+    def __str__(self):
+        return 'DtIntRange('+str(self.id) + ',' + str(self.int1)+ ',' + str(self.int2)+')'
 
 class DtPeriodOfTime(models.Model):
     id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -191,6 +204,8 @@ class DtPeriodOfTime(models.Model):
         managed = True
         db_table = 'dt_period_of_time'
 
+    def __str__(self):
+        return 'DtPeriodofTime('+str(self.id) + ',startdate-' + str(self.start_date)+ ',enddate-' + str(self.end_date)+')'
 
 class ExamBiopsy(models.Model):
     id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -377,6 +392,8 @@ class Patient(models.Model):
         managed = True
         db_table = 'patient'
 
+    def __str__(self):
+        return 'patient(id-'+str(self.id) + ')'
 
 class PatientVisit(models.Model):
     id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -400,6 +417,9 @@ class VocActivityLevel(models.Model):
         managed = True
         db_table = 'voc_activity_level'
 
+    def __str__(self):
+        return 'VocActivityLevel('+str(self.id) + ',' + str(self.code)+ ',' + str(self.value)+')'
+
 
 class VocAnaPattern(models.Model):
     id = models.PositiveSmallIntegerField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -409,6 +429,11 @@ class VocAnaPattern(models.Model):
     class Meta:
         managed = True
         db_table = 'voc_ana_pattern'
+
+
+    def __str__(self):
+        return 'VocAnaPattern('+str(self.id) + ',' + str(self.code)+ ',' + str(self.name)+')'
+
 
 
 class VocAssessment(models.Model):
@@ -422,6 +447,10 @@ class VocAssessment(models.Model):
         db_table = 'voc_assessment'
 
 
+    def __str__(self):
+        return 'VocAssessment('+str(self.id) + ',' + str(self.code)+ ',' + str(self.name)+')'
+
+
 class VocBiopsy(models.Model):
     id = models.PositiveSmallIntegerField(db_column='ID', primary_key=True)  # Field name made lowercase.
     code = models.CharField(db_column='CODE', unique=True, max_length=15)  # Field name made lowercase.
@@ -431,6 +460,9 @@ class VocBiopsy(models.Model):
     class Meta:
         managed = True
         db_table = 'voc_biopsy'
+
+    def __str__(self):
+        return 'VocBiopsy('+str(self.id) + ',' + str(self.code)+ ',' + str(self.name)+')'
 
 
 class VocBmiClass(models.Model):
@@ -453,6 +485,9 @@ class VocCaciCondition(models.Model):
         managed = True
         db_table = 'voc_caci_condition'
 
+    def __str__(self):
+        return 'VocCaciCondition('+str(self.id) + ',' + str(self.code)+ ',' + str(self.condition)+')'
+
 
 class VocConfirmation(models.Model):
     id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -464,6 +499,8 @@ class VocConfirmation(models.Model):
         managed = True
         db_table = 'voc_confirmation'
 
+    def __str__(self):
+        return 'VocConfirmation('+str(self.id) + ',' + str(self.code)+ ',' + str(self.name)+')'
 
 class VocCryoType(models.Model):
     id = models.PositiveSmallIntegerField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -486,6 +523,8 @@ class VocDirection(models.Model):
         managed = True
         db_table = 'voc_direction'
 
+    def __str__(self):
+        return 'VocDirection('+str(self.id) + ',' + str(self.code)+ ',' + str(self.name)+')'
 
 class VocEducationLevel(models.Model):
     id = models.PositiveSmallIntegerField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -497,6 +536,8 @@ class VocEducationLevel(models.Model):
         managed = True
         db_table = 'voc_education_level'
 
+    def __str__(self):
+        return 'VocEducationLevel('+str(self.id) + ',' + str(self.code)+ ',' + str(self.name)+')'
 
 class VocEssdaiDomain(models.Model):
     id = models.PositiveSmallIntegerField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -509,6 +550,8 @@ class VocEssdaiDomain(models.Model):
         managed = True
         db_table = 'voc_essdai_domain'
 
+    def __str__(self):
+        return 'VocEssdaiDomain('+str(self.id) + ',' + str(self.code)+')'
 
 class VocEthnicity(models.Model):
     id = models.PositiveSmallIntegerField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -520,6 +563,8 @@ class VocEthnicity(models.Model):
         managed = True
         db_table = 'voc_ethnicity'
 
+    def __str__(self):
+        return 'VocEthnicity('+str(self.id) + ',' + str(self.code)+ ',' + str(self.name)+')'
 
 class VocExamOutcomeType(models.Model):
     id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -531,6 +576,8 @@ class VocExamOutcomeType(models.Model):
         managed = True
         db_table = 'voc_exam_outcome_type'
 
+    def __str__(self):
+        return 'VocExamOutcomeType('+str(self.id) + ',' + str(self.code)+ ',' + str(self.name)+')'
 
 class VocIpiRisk(models.Model):
     id = models.PositiveSmallIntegerField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -557,6 +604,9 @@ class VocLabTest(models.Model):
         managed = True
         db_table = 'voc_lab_test'
 
+    def __str__(self):
+        return 'VocLabTest('+str(self.id) + ',' + str(self.code)+ ',' + str(self.name)+')'
+
 
 class VocLabTestType(models.Model):
     id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -567,6 +617,8 @@ class VocLabTestType(models.Model):
         managed = True
         db_table = 'voc_lab_test_type'
 
+    def __str__(self):
+        return 'VocLabTestType('+str(self.id) + ',' + str(self.code)+ ',' + str(self.name)+')'
 
 class VocLymphomaOrgan(models.Model):
     id = models.PositiveSmallIntegerField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -578,6 +630,8 @@ class VocLymphomaOrgan(models.Model):
         managed = True
         db_table = 'voc_lymphoma_organ'
 
+    def __str__(self):
+        return 'VocLymphomaOrgan('+str(self.id) + ',' + str(self.code)+ ',' + str(self.name)+')'
 
 class VocLymphomaStage(models.Model):
     id = models.PositiveSmallIntegerField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -589,6 +643,8 @@ class VocLymphomaStage(models.Model):
         managed = True
         db_table = 'voc_lymphoma_stage'
 
+    def __str__(self):
+        return 'VocLymphomaStage('+str(self.id) + ',' + str(self.code)+ ',' + str(self.name)+')'
 
 class VocMedicalCondition(models.Model):
     id = models.PositiveSmallIntegerField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -603,6 +659,8 @@ class VocMedicalCondition(models.Model):
         managed = True
         db_table = 'voc_medical_condition'
 
+    def __str__(self):
+        return 'VocMedicalCondition('+str(self.id) + ',' + str(self.code)+ ',' + str(self.name)+')'
 
 class VocMedicalImagingTest(models.Model):
     id = models.PositiveSmallIntegerField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -615,6 +673,8 @@ class VocMedicalImagingTest(models.Model):
         managed = True
         db_table = 'voc_medical_imaging_test'
 
+    def __str__(self):
+        return 'VocMedicalImagingTest('+str(self.id) + ',' + str(self.code)+ ',' + str(self.name)+')'
 
 class VocPerformanceStatus(models.Model):
     id = models.PositiveSmallIntegerField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -639,6 +699,8 @@ class VocPharmDrug(models.Model):
         managed = True
         db_table = 'voc_pharm_drug'
 
+    def __str__(self):
+        return 'VocPharmDrug('+str(self.id) + ',' + str(self.code)+ ',' + str(self.name)+')'
 
 class VocPregnancyOutcome(models.Model):
     id = models.PositiveSmallIntegerField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -651,6 +713,8 @@ class VocPregnancyOutcome(models.Model):
         managed = True
         db_table = 'voc_pregnancy_outcome'
 
+    def __str__(self):
+        return 'VocPreganancyOutcome('+str(self.id) + ',' + str(self.code)+ ',' + str(self.name)+')'
 
 class VocQuestionnaire(models.Model):
     id = models.PositiveSmallIntegerField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -666,6 +730,8 @@ class VocQuestionnaire(models.Model):
         managed = True
         db_table = 'voc_questionnaire'
 
+    def __str__(self):
+        return 'VocQuestionnaire('+str(self.id) + ',' + str(self.code)+ ',' + str(self.name)+')'
 
 class VocRelativeDegree(models.Model):
     id = models.PositiveSmallIntegerField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -686,6 +752,9 @@ class VocSex(models.Model):
         managed = True
         db_table = 'voc_sex'
 
+    def __str__(self):
+        return 'VocSex('+str(self.id) + ',' + str(self.code)+ ',' + str(self.name)+')'
+
 
 class VocSmokingStatus(models.Model):
     id = models.PositiveSmallIntegerField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -697,6 +766,8 @@ class VocSmokingStatus(models.Model):
         managed = True
         db_table = 'voc_smoking_status'
 
+    def __str__(self):
+        return 'VocSmokingStatus('+str(self.id) + ',' + str(self.code)+ ',' + str(self.name)+')'
 
 class VocSpecialist(models.Model):
     id = models.PositiveSmallIntegerField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -707,6 +778,8 @@ class VocSpecialist(models.Model):
         managed = True
         db_table = 'voc_specialist'
 
+    def __str__(self):
+        return 'VocSpecialist('+str(self.id) + ',' + str(self.code)+ ',' + str(self.name)+')'
 
 class VocSymptomSign(models.Model):
     id = models.PositiveSmallIntegerField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -719,6 +792,8 @@ class VocSymptomSign(models.Model):
         managed = True
         db_table = 'voc_symptom_sign'
 
+    def __str__(self):
+        return 'VocSymptomSign('+str(self.id) + ',' + str(self.code)+ ',' + str(self.name)+')'
 
 class VocUnit(models.Model):
     id = models.PositiveSmallIntegerField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -730,6 +805,8 @@ class VocUnit(models.Model):
         managed = True
         db_table = 'voc_unit'
 
+    def __str__(self):
+        return 'VocUnit('+str(self.id) + ',' + str(self.code)+ ',' + str(self.expression)+')'
 
 class VocVisitStatus(models.Model):
     id = models.PositiveSmallIntegerField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -741,6 +818,8 @@ class VocVisitStatus(models.Model):
         managed = True
         db_table = 'voc_visit_status'
 
+    def __str__(self):
+        return 'VocVisitStatus('+str(self.id) + ',' + str(self.code)+ ',' + str(self.name)+')'
 
 class VocVisitType(models.Model):
     id = models.PositiveSmallIntegerField(db_column='ID', primary_key=True)  # Field name made lowercase.
@@ -751,3 +830,6 @@ class VocVisitType(models.Model):
     class Meta:
         managed = True
         db_table = 'voc_visit_type'
+
+    def __str__(self):
+        return 'VocVisitType('+str(self.id) + ',' + str(self.code)+ ',' + str(self.name)+')'

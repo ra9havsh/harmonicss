@@ -16,7 +16,6 @@ from .models import Cohort,CondSymptom,CondDiagnosis,CondDiagnosisOrgans,Patient
 from harmonics import settings
 from transfer.forms import TransferForm
 
-
 def voc_biopsy(code,name):
     n = name.split('(', 1)
     name = n[0]
@@ -191,7 +190,8 @@ def dt_period(date1,date2):
     return dt_period[0]
 
 def biopsy_test(patient,biopsy):
-    for bio in biopsy:
+    trace=""
+    for no,bio in enumerate(biopsy):
         biopsy =  voc_biopsy(bio['biopsy-Type-CV']['code-Value'],bio['biopsy-Type-CV']['code-Display-Name'])
         test = voc_lab_test(bio['test-CV']['code-Value'],bio['test-CV']['code-Display-Name'])
 
@@ -225,8 +225,14 @@ def biopsy_test(patient,biopsy):
                 assessment = voc_assessment(bio['test-Outcome-Assessment-Code']['code-Value'],bio['test-Outcome-Assessment-Code']['code-Display-Name'])
                 # print(assessment.id)
 
-            ExamBiopsy.objects.get_or_create(patient=patient,biopsy=biopsy,test=test,outcome_amount=outcome_amount,normal_range=normal_range,
+            exambiopsy = ExamBiopsy.objects.get_or_create(patient=patient,biopsy=biopsy,test=test,outcome_amount=outcome_amount,normal_range=normal_range,
                                                  assessment=assessment,outcome_check=outcome_check,biopsy_date=biopsy_date,visit=visit)
+
+            trace = trace + str(no) + ". transfer biopsy(" + str(patient.id) + "," + str(biopsy) + "," + str(test) + "," + str(outcome_amount) + \
+                    "," + str(normal_range) + "," + str(assessment) + "," + str(outcome_check) + "," + str(biopsy_date) + ")<br> to Exam_biopsy(patient,biopsy,test,outcome_amount,normal_range,assessment,outcome_check,biopsy_date) of id " \
+                    + str(exambiopsy[0].id) + ".<br>"
+
+    return trace
 
 def laboratory_test(patient, laboratory):
     for lab in laboratory:
@@ -376,9 +382,14 @@ def questionnaire_test(patient,questionnaire):
             ExamQuestionnaireScore.objects.get_or_create(patient=patient,score=score,value=score_value,questionnaire_date=questionnaire_date,assessment=assessment,normal_range=normal_range)
 
 def positive_stmt(patient,pos_stmt):
+    trace=""
     for pos in pos_stmt:
         if pos == "biopsy-Test-JA":
-            biopsy_test(patient,pos_stmt[pos])
+            bio = biopsy_test(patient,pos_stmt[pos])
+            trace = "<br><b>For biopsy test of patient->id " + str(patient.id) + ":</b><br>"
+            if not len(bio) > 0:
+                bio = "no data in biopsy test of  patient->id" + str(patient.id) + "<br>"
+            trace = trace+bio
         elif pos == "lab-Test-JA":
             laboratory_test(patient,pos_stmt[pos])
         elif pos == "demographic-JA":
@@ -393,6 +404,8 @@ def positive_stmt(patient,pos_stmt):
             questionnaire_test(patient, pos_stmt[pos])
         else:
             print(pos)
+
+    return trace
 
 def negative_stmt(patient,neg_stmt):
     for neg in neg_stmt:
@@ -456,7 +469,8 @@ def patient(type,uid,dob,ssso,ssd):
         return patient[0]
 
 def person_JA(personJA):
-    for p in personJA:
+    trace = "<br><font size='5'><b>For transfer of Person-JA:</b></font><br>"
+    for no,p in enumerate(personJA):
         person_type = None
         person_uid = None
         person_dob = None
@@ -475,18 +489,32 @@ def person_JA(personJA):
             person_SS_D = p["person-SS-Diagnosis"]
 
         patient_obj = patient(person_type, person_uid, person_dob, person_SS_S_O, person_SS_D)
+        trace = trace + "<br><b>" +str(no) + ". transfer person(" + str(person_type) + ","+str(person_uid)+ ","+str(person_dob)+ ","+str(person_SS_S_O)+ \
+                ","+str(person_SS_D)+") to patient(id-"+str(patient_obj.id)+",uid,dateofbirth,ss-sym-onset,ss-diagnosis).</b><br>"
 
         if 'POSITIVE-STMT' in p:
-            positive_stmt(patient_obj,p['POSITIVE-STMT'])
+            pos = positive_stmt(patient_obj,p['POSITIVE-STMT'])
+
+            if not len(pos)>0:
+                pos = "no data in positive statement of patient of id "+str(patient_obj.id)+"<br>"
+        else:
+            pos = "no data in positive statement.<br>"
 
         if 'NEGATIVE-STMT' in p:
             negative_stmt(patient_obj,p['NEGATIVE-STMT'])
 
+        trace = trace+pos
+
+    return trace
+
 def cohort(cohort):
-    for c in cohort:
+    trace="<font size='5'><b>For transfer of Cohort:</b></font><br>"
+    for no, c in enumerate(cohort):
         if len(c['code']) and len(c['label']):
-            Cohort.objects.get_or_create(parameter=c['code'],value=c['label'])
+            coh = Cohort.objects.get_or_create(parameter=c['code'],value=c['label'])
+            trace = trace + str(no)+". transfer code->"+c['code']+" to parameter, label ->"+c['label']+" to "+str(coh[0])+"<br>"
             # print("cohort table is filled...")
+    return trace
 
 
 def homepage(request):
@@ -535,6 +563,7 @@ def homepage(request):
 
             return redirect('transfer:message','success')
 
+
             # r = requests.get('https://private.harmonicss.eu/hcloud/remote.php/webdav/Harm-JSON/QMUL-2019-04-11-Dummy-Data-Harmonization.json')
             # r = requests.get('j.json')
             # results = r.json()
@@ -553,7 +582,32 @@ def homepage(request):
 
 def transfer(request,msg):
     if str(msg)=='success':
-        return render(request, 'transfer/transfer.html', {'success': 'Data Tranferred successfully.....'})
+        file = os.path.join(settings.BASE_DIR, 'transfer/static/transfer/j0.json')
+        json_file = open(file)
+        results = json.load(json_file)
+        json_file.close()
+        cohort_list=results["cohort"]["term-JA"]
+        personJA=results["person-JA"]
+
+        t=cohort(cohort_list)
+        tt=person_JA(personJA)
+
+        request.session['trace'] = ""
+        trace =  request.session.get('trace')
+        if len(t)>0:
+            trace = trace+t
+        else:
+            trace = trace + "no data in cohort"
+
+        if len(tt)>0:
+            trace = trace+tt
+        else:
+            trace = trace + "no data in person-JA"
+
+        request.session['trace']=trace
+        trace = request.session.get('trace')
+
+        return render(request, 'transfer/transfer.html', {'success': 'Data Tranferred successfully.....','trace':trace})
     elif str(msg)=='error':
         return render(request, 'transfer/transfer.html', {'error': 'Sorry time out exception occurred, or there may be something wrong'})
     else:

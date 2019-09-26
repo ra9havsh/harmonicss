@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url('admin/', admin.site.urls),
-    url(r'^transfer/', include('transfer.urls')),
+    url(r'^', include('transfer.urls')),
 ]
 
 if settings.DEBUG:
