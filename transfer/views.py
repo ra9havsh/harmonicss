@@ -16,10 +16,12 @@ from .models import Cohort,CondSymptom,CondDiagnosis,CondDiagnosisOrgans,Patient
 from harmonics import settings
 from transfer.forms import TransferForm
 
+database_name = 'default'
+
 def voc_biopsy(code,name):
     n = name.split('(', 1)
     name = n[0]
-    biopsy = VocBiopsy.objects.get(code=code,name__contains=name)
+    biopsy = VocBiopsy.objects.using(database_name).get(code=code,name__contains=name)
     return biopsy
 
 def voc_lab_test(code,name):
@@ -29,14 +31,14 @@ def voc_lab_test(code,name):
     name = n[0]
     # print(code)
     # print(name)
-    test = VocLabTest.objects.get(code=code,name__contains=name)
+    test = VocLabTest.objects.using(database_name).get(code=code,name__contains=name)
     return test
 
 def voc_unit(code,name):
     n = name.split('(', 1)
     name = n[0]
     try:
-        unit = VocUnit.objects.get(code=code,expression__contains=name)
+        unit = VocUnit.objects.using(database_name).get(code=code,expression__contains=name)
     except VocUnit.DoesNotExist:
         unit=None
     return unit
@@ -44,49 +46,49 @@ def voc_unit(code,name):
 def voc_assessment(code,name):
     n = name.split('(', 1)
     name = n[0]
-    assessment = VocAssessment.objects.get(code=code,name__contains=name)
+    assessment = VocAssessment.objects.using(database_name).get(code=code,name__contains=name)
     return assessment
 
 def voc_ethnicity(code,name):
     n = name.split('(', 1)
     name = n[0]
-    ethnicity = VocEthnicity.objects.get(code=code,name__contains=name)
+    ethnicity = VocEthnicity.objects.using(database_name).get(code=code,name__contains=name)
     return ethnicity
 
 def voc_sex(code,name):
     n = name.split('(', 1)
     name=n[0]
-    sex = VocSex.objects.get(code=code,name__contains=name)
+    sex = VocSex.objects.using(database_name).get(code=code,name__contains=name)
     return sex
 
 def voc_smoking_status(code,name):
     n = name.split('(', 1)
     name = n[0]
-    smoking_status = VocSmokingStatus.objects.get(code=code,name__contains=name)
+    smoking_status = VocSmokingStatus.objects.using(database_name).get(code=code,name__contains=name)
     return smoking_status
 
 def voc_symptom_sign(code,name):
     n = name.split('(', 1)
     name = n[0]
-    symptom_sign = VocSymptomSign.objects.get(code=code,name__contains=name)
+    symptom_sign = VocSymptomSign.objects.using(database_name).get(code=code,name__contains=name)
     return symptom_sign
 
 def voc_medical_condition(code,name):
     n = name.split('(', 1)
     name = n[0]
-    medical_condition = VocMedicalCondition.objects.get(code=code,name__contains=name)
+    medical_condition = VocMedicalCondition.objects.using(database_name).get(code=code,name__contains=name)
     return medical_condition
 
 def voc_pharm_drug(code,name):
     n = name.split('(', 1)
     name = n[0]
-    medication = VocPharmDrug.objects.get(code=code,name__contains=name)
+    medication = VocPharmDrug.objects.using(database_name).get(code=code,name__contains=name)
     return medication
 
 def voc_lymphoma_organ(code,name):
     n = name.split('(', 1)
     name = n[0]
-    organ = VocLymphomaOrgan.objects.get(code=code,name__contains=name)
+    organ = VocLymphomaOrgan.objects.using(database_name).get(code=code,name__contains=name)
     return organ
 
 def voc_questionnaire(code,name):
@@ -94,7 +96,7 @@ def voc_questionnaire(code,name):
     name = n[0]
     n = name.split('(', 1)
     name = n[0]
-    questionnaire = VocQuestionnaire.objects.get(code=code,name__contains=name)
+    questionnaire = VocQuestionnaire.objects.using(database_name).get(code=code,name__contains=name)
     return questionnaire
 
 def dt_int_range(test_normal_range):
@@ -108,7 +110,7 @@ def dt_int_range(test_normal_range):
     if 'interval-Amount-Up-Limit' in test_normal_range:
         up_limit = test_normal_range['interval-Amount-Up-Limit']
 
-    dt_int_range = DtIntRange.objects.get_or_create(int1=down_limit,int2=up_limit)
+    dt_int_range = DtIntRange.objects.using(database_name).get_or_create(int1=down_limit,int2=up_limit)
     return dt_int_range[0]
 
 def dt_amount_range(test_normal_range):
@@ -128,7 +130,7 @@ def dt_amount_range(test_normal_range):
     if 'interval-Amount-Up-Limit' in test_normal_range:
         up_limit = test_normal_range['interval-Amount-Up-Limit']
 
-    dt_amount_range = DtAmountRange.objects.get_or_create(value1=down_limit,value2=up_limit,unit=unit)
+    dt_amount_range = DtAmountRange.objects.using(database_name).get_or_create(value1=down_limit,value2=up_limit,unit=unit)
     return dt_amount_range[0]
 
 def dt_amount(test_outcome):
@@ -147,7 +149,7 @@ def dt_amount(test_outcome):
         elif 'interval-Amount-Up-Limit' in test_outcome:
             amount_value=test_outcome['interval-Amount-Up-Limit']
 
-        dt_amount = DtAmount.objects.get_or_create(value=amount_value,unit=unit)
+        dt_amount = DtAmount.objects.using(database_name).get_or_create(value=amount_value,unit=unit)
         return dt_amount[0]
     else:
         return None
@@ -170,8 +172,8 @@ def dt_date(date):
         year = date[0]
 
     if len(date) > 0:
-        dt_date = DtDate.objects.get_or_create(year=year, month=int(month), day=int(day),
-                                               op=VocDirection.objects.get(id=2))
+        dt_date = DtDate.objects.using(database_name).get_or_create(year=year, month=int(month), day=int(day),
+                                               op=VocDirection.objects.using(database_name).get(id=2))
         return dt_date[0]
 
 def dt_period(date1,date2):
@@ -186,7 +188,7 @@ def dt_period(date1,date2):
     else:
         end_date=None
 
-    dt_period = DtPeriodOfTime.objects.get_or_create(start_date=start_date,end_date=end_date)
+    dt_period = DtPeriodOfTime.objects.using(database_name).get_or_create(start_date=start_date,end_date=end_date)
     return dt_period[0]
 
 def biopsy_test(patient,biopsy):
@@ -225,7 +227,7 @@ def biopsy_test(patient,biopsy):
                 assessment = voc_assessment(bio['test-Outcome-Assessment-Code']['code-Value'],bio['test-Outcome-Assessment-Code']['code-Display-Name'])
                 # print(assessment.id)
 
-            exambiopsy = ExamBiopsy.objects.get_or_create(patient=patient,biopsy=biopsy,test=test,outcome_amount=outcome_amount,normal_range=normal_range,
+            exambiopsy = ExamBiopsy.objects.using(database_name).get_or_create(patient=patient,biopsy=biopsy,test=test,outcome_amount=outcome_amount,normal_range=normal_range,
                                                  assessment=assessment,outcome_check=outcome_check,biopsy_date=biopsy_date,visit=visit)
 
             trace = trace + str(no) + ". transfer biopsy(" + str(patient.id) + "," + str(biopsy) + "," + str(test) + "," + str(outcome_amount) + \
@@ -271,7 +273,7 @@ def laboratory_test(patient, laboratory):
                 outcome_assessment = voc_assessment(lab['test-Outcome-Assessment-Code']['code-Value'],lab['test-Outcome-Assessment-Code']['code-Display-Name'])
                 # print(outcome_assessment.id)
 
-            lab_test = ExamLabTest.objects.get_or_create(patient=patient,test=test,outcome_amount=outcome_amount,normal_range=normal_range,outcome_assessment=outcome_assessment,outcome_term_id=outcome_term_id,sample_date=sample_date,visit=visit)
+            lab_test = ExamLabTest.objects.using(database_name).get_or_create(patient=patient,test=test,outcome_amount=outcome_amount,normal_range=normal_range,outcome_assessment=outcome_assessment,outcome_term_id=outcome_term_id,sample_date=sample_date,visit=visit)
 
             trace = trace + str(no) + ". transfer Laboratory(" + str(patient.id) + "," + str(test) + "," + str(outcome_amount) + \
                     "," + str(normal_range) + "," + str(outcome_assessment) + "," + str(outcome_term_id) + "," + str(sample_date)+ "," + str(visit) + ")<br> " + \
@@ -286,14 +288,14 @@ def demographic(patient, demographic):
         if demo['type']=='Ethnicity':
             if 'ethnicity-CV' in demo:
                 ethnicity = voc_ethnicity(demo['ethnicity-CV']['code-Value'],demo['ethnicity-CV']['code-Display-Name'])
-                eth = DemoEthnicityData.objects.get_or_create(patient=patient,ethnicity=ethnicity)
+                eth = DemoEthnicityData.objects.using(database_name).get_or_create(patient=patient,ethnicity=ethnicity)
                 trace = trace + str(no) + ". transfer Ethnicity(" + str(patient.id) + "," + str(ethnicity) + ")<br> " + \
                         "&nbsp;&nbsp;&nbsp; to Demo_Ethnicity_Data(patient,ethnicity) of id " \
                         + str(eth[0].id) + ".<br>"
         elif demo['type']=='Gender':
             if 'gender-CV' in demo:
                 sex = voc_sex(demo['gender-CV']['code-Value'], demo['gender-CV']['code-Display-Name'])
-                gender = DemoSexData.objects.get_or_create(patient=patient, sex=sex)
+                gender = DemoSexData.objects.using(database_name).get_or_create(patient=patient, sex=sex)
                 trace = trace + str(no) + ". transfer Gender(" + str(patient.id) + "," + str(sex) + ")<br> " + \
                         "&nbsp;&nbsp;&nbsp; to Demo_Ethnicity_Data(patient,ethnicity) of id " \
                         + str(gender[0].id) + ".<br>"
@@ -306,7 +308,7 @@ def pregnancy_smoking(patient, preg_smoke):
         if pregsmk['type']=='Tobacco-Consumption':
             if 'tobacco-Consumption-Status-CV' in pregsmk:
                 smoking_status = voc_smoking_status(pregsmk['tobacco-Consumption-Status-CV']['code-Value'],pregsmk['tobacco-Consumption-Status-CV']['code-Display-Name'])
-                lifestyle = LifestyleSmoking.objects.get_or_create(patient=patient,status=smoking_status)
+                lifestyle = LifestyleSmoking.objects.using(database_name).get_or_create(patient=patient,status=smoking_status)
                 trace = trace + str(no) + ". transfer Tobacco-consumption(" + str(patient.id) + "," + str(smoking_status) + ")<br> " + \
                         "&nbsp;&nbsp;&nbsp; to LifeStyleSmoking(patient,status) of id " \
                         + str(lifestyle[0].id) + ".<br>"
@@ -332,7 +334,7 @@ def condition_test(patient, condition):
             else:
                 observe_date = None
 
-            symp = CondSymptom.objects.get_or_create(patient=patient,condition=symptom_sign,observe_date=observe_date)
+            symp = CondSymptom.objects.using(database_name).get_or_create(patient=patient,condition=symptom_sign,observe_date=observe_date)
             trace = trace + str(no) + ". transfer Symptoms-or-Signs(" + str(patient.id) + "," + str(symptom_sign)+ "," + str(observe_date) + ")<br> " + \
                     "&nbsp;&nbsp;&nbsp; to CondSymptoms(patient,condition,observe_date) of id " \
                     + str(symp[0].id) + ".<br>"
@@ -349,7 +351,7 @@ def condition_test(patient, condition):
             else:
                 diagnosis_date = None
 
-            diagnosis = CondDiagnosis.objects.get_or_create(patient=patient,condition=medical_condition,diagnosis_date=diagnosis_date)
+            diagnosis = CondDiagnosis.objects.using(database_name).get_or_create(patient=patient,condition=medical_condition,diagnosis_date=diagnosis_date)
             trace = trace + str(no) + ". transfer Diagonsis(" + str(patient.id) + "," + str(medical_condition) + "," + \
                     str(diagnosis_date) + ")<br> " + \
                     "&nbsp;&nbsp;&nbsp; to CondDiagnosis(patient,condition,diagnosis_date) of id " \
@@ -359,7 +361,7 @@ def condition_test(patient, condition):
                 for org in con['diagnosis-Organ-CV-JA']:
                     if 'code-Value' in org and 'code-Display-Name' in org:
                         organ=voc_lymphoma_organ(org['code-Value'],org['code-Display-Name'])
-                        diagnosis_organ = CondDiagnosisOrgans.objects.get_or_create(diagnosis=diagnosis[0],organ=organ)
+                        diagnosis_organ = CondDiagnosisOrgans.objects.using(database_name).get_or_create(diagnosis=diagnosis[0],organ=organ)
                         trace = trace + str(no) + ". transfer DiagonisOrgan(" + str(diagnosis[0].id) + "," + str(organ) + ")<br> " + \
                                 "&nbsp;&nbsp;&nbsp; to CondDiagnosisOrgans(diagnosis,organ) of id " \
                                 + str(diagnosis_organ[0].id) + ".<br>"
@@ -384,7 +386,7 @@ def intervention_test(patient,intervation):
             else:
                 period = None
 
-            med = IntervMedication.objects.get_or_create(patient=patient,medication=medication,period=period)
+            med = IntervMedication.objects.using(database_name).get_or_create(patient=patient,medication=medication,period=period)
             trace = trace + str(no) + ". transfer Medication(" + str(patient.id) + "," + str(medication)+ "," + str(period) + ")<br> " + \
                     "&nbsp;&nbsp;&nbsp; to InterMedication(patient,medication,period) of id " \
                     + str(med[0].id) + ".<br>"
@@ -421,7 +423,7 @@ def questionnaire_test(patient,questionnaire):
             else:
                 assessment = None
 
-            ques = ExamQuestionnaireScore.objects.get_or_create(patient=patient,score=score,value=score_value,questionnaire_date=questionnaire_date,assessment=assessment,normal_range=normal_range)
+            ques = ExamQuestionnaireScore.objects.using(database_name).get_or_create(patient=patient,score=score,value=score_value,questionnaire_date=questionnaire_date,assessment=assessment,normal_range=normal_range)
             trace = trace + str(no) + ". transfer Questionnaire-Score(" + str(patient.id) + "," + str(score) + "," + str(score_value)+ "," + str(questionnaire_date) + \
                     "," + str(assessment)+ "," + str(normal_range)+")<br> " + \
                     "&nbsp;&nbsp;&nbsp; to ExamQuestionnaireScore(patient,medication,period) of id " \
@@ -549,7 +551,7 @@ def patient_date(date):
             year = date[0]
 
         if len(date)>0:
-            dt_date = DtDate.objects.get_or_create(year=year,month=int(month),day=int(day),op=VocDirection.objects.get(id=2))
+            dt_date = DtDate.objects.using(database_name).get_or_create(year=year,month=int(month),day=int(day),op=VocDirection.objects.using(database_name).get(id=2))
             return dt_date[0]
     else:
         return None
@@ -565,7 +567,7 @@ def patient(type,uid,dob,ssso,ssd):
         # print(person_ssso.id)
         # print(person_ssd.id)
 
-        patient = Patient.objects.get_or_create(uid=uid,date_of_birth=person_dob,pss_symptoms_onset_date=person_ssso,pss_diagnosis_date=person_ssd)
+        patient = Patient.objects.using(database_name).get_or_create(uid=uid,date_of_birth=person_dob,pss_symptoms_onset_date=person_ssso,pss_diagnosis_date=person_ssd)
         # print("patient table is filled")
 
 
@@ -625,22 +627,39 @@ def cohort(cohort):
     trace="<font size='5'><b>For transfer of Cohort:</b></font><br>"
     for no, c in enumerate(cohort):
         if len(c['code']) and len(c['label']):
-            coh = Cohort.objects.get_or_create(parameter=c['code'],value=c['label'])
+            coh = Cohort.objects.using(database_name).get_or_create(parameter=c['code'],value=c['label'])
             trace = trace + str(no)+". transfer code->"+c['code']+" to parameter, label ->"+c['label']+" to "+str(coh[0])+"<br>"
             # print("cohort table is filled...")
     return trace
 
 
 def homepage(request):
-    # file = os.path.join(settings.BASE_DIR, 'transfer/static/transfer/j5.json')
-    # json_file = open(file)
-    # results = json.load(json_file)
-    # json_file.close()
-    # cohort_list=results["cohort"]["term-JA"]
-    # personJA=results["person-JA"]
-    #
-    # cohort(cohort_list)
-    # person_JA(personJA)
+    file = os.path.join(settings.BASE_DIR, 'transfer/static/transfer/j5.json')
+    json_file = open(file)
+    results = json.load(json_file)
+    json_file.close()
+    cohort_list=results["cohort"]["term-JA"]
+    personJA=results["person-JA"]
+
+    t = cohort(cohort_list)
+    tt = person_JA(personJA)
+
+    request.session['trace'] = ""
+
+    trace = request.session.get('trace')
+    if len(t) > 0:
+        trace = trace + t
+    else:
+        trace = trace + "no data in cohort"
+
+    if len(tt) > 0:
+        trace = trace + tt
+    else:
+        trace = trace + "no data in person-JA"
+
+    request.session['trace'] = trace
+
+    return redirect('transfer:message', 'success')
 
     if request.method=="POST":
         transfer_form= TransferForm(request.POST)
