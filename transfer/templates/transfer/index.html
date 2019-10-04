@@ -19,12 +19,33 @@
             <label for="url">Url:</label>
             {{ transfer_form.url }}
         </div>
+        <div class="form-group">
+            <label for="database">Database:</label>
+            {{ transfer_form.database }}
+        </div>
+        <div class="form-group">
+            <label for="database">Database UserName:</label>
+            {{ transfer_form.username }}
+        </div>
+        <div class="form-group">
+            <label for="database">Database Password:</label>
+            {{ transfer_form.password }}
+        </div>
         <div class="transfer-btn">
-            <button type="submit" class="btn btn-success" onclick="loader();">Transfer</button>
+            <button type="submit" class="btn btn-success" onclick="valid();">Transfer</button>
         </div>
     </form>
 <div class="loading" id="loading">Loading&#8230;</div>
  <script>
+    url = document.getElementById('url').value
+    username = document.getElementById('username').value
+    password = document.getElementById('password').value
+
+    function valid(){
+        if(url != '' || usename != '' || password != '')
+            loader();
+    }
+
     function loader(){
         document.getElementById('loading').style.display = "block";
     }

@@ -7,6 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 from selenium.common.exceptions import WebDriverException
 from selenium.common.exceptions import NoSuchElementException
+from django.conf import settings
 import json
 import os
 import re
@@ -16,7 +17,7 @@ from .models import Cohort,CondSymptom,CondDiagnosis,CondDiagnosisOrgans,Patient
 from harmonics import settings
 from transfer.forms import TransferForm
 
-database_name = 'default'
+database_name = 'database1'
 
 def voc_biopsy(code,name):
     n = name.split('(', 1)
@@ -634,39 +635,48 @@ def cohort(cohort):
 
 
 def homepage(request):
-    file = os.path.join(settings.BASE_DIR, 'transfer/static/transfer/j5.json')
-    json_file = open(file)
-    results = json.load(json_file)
-    json_file.close()
-    cohort_list=results["cohort"]["term-JA"]
-    personJA=results["person-JA"]
-
-    t = cohort(cohort_list)
-    tt = person_JA(personJA)
-
-    request.session['trace'] = ""
-
-    trace = request.session.get('trace')
-    if len(t) > 0:
-        trace = trace + t
-    else:
-        trace = trace + "no data in cohort"
-
-    if len(tt) > 0:
-        trace = trace + tt
-    else:
-        trace = trace + "no data in person-JA"
-
-    request.session['trace'] = trace
-
-    return redirect('transfer:message', 'success')
+    # file = os.path.join(settings.BASE_DIR, 'transfer/static/transfer/j5.json')
+    # json_file = open(file)
+    # results = json.load(json_file)
+    # json_file.close()
+    # cohort_list=results["cohort"]["term-JA"]
+    # personJA=results["person-JA"]
+    #
+    # t = cohort(cohort_list)
+    # tt = person_JA(personJA)
+    #
+    # request.session['trace'] = ""
+    #
+    # trace = request.session.get('trace')
+    # if len(t) > 0:
+    #     trace = trace + t
+    # else:
+    #     trace = trace + "no data in cohort"
+    #
+    # if len(tt) > 0:
+    #     trace = trace + tt
+    # else:
+    #     trace = trace + "no data in person-JA"
+    #
+    # request.session['trace'] = trace
+    #
+    # return redirect('transfer:message', 'success')
 
     if request.method=="POST":
         transfer_form= TransferForm(request.POST)
         url = request.POST.get('url')
+        database_name = request.POST.get('database')
+        username = request.POST.get('username')
+        password = request.POST.get('password')
 
-        if transfer_form.is_valid :
-            pass
+
+        if transfer_form.is_valid and database_name is not '0':
+
+            # database = settings.DATABASES[database_name]
+            #
+            # if database['USER'] is not username or database['PASSWORD'] is not password:
+
+
             chrome_url = os.path.join(settings.BASE_DIR, 'transfer/static/transfer/chromium_driver/chromedriver.exe')
             driver = webdriver.Chrome(chrome_url)
 
