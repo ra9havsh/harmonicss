@@ -8,6 +8,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.common.exceptions import WebDriverException
 from selenium.common.exceptions import NoSuchElementException
 from django.conf import settings
+from django.contrib import messages
 import json
 import os
 import re
@@ -672,9 +673,16 @@ def homepage(request):
 
         if transfer_form.is_valid and database_name is not '0':
 
-            # database = settings.DATABASES[database_name]
-            #
-            # if database['USER'] is not username or database['PASSWORD'] is not password:
+            database = settings.DATABASES[database_name]
+
+            if database['PASSWORD'] is not password:
+                print(password)
+                print(database['PASSWORD'])
+
+
+            if database['USER'] != username or database['PASSWORD'] != password:
+                messages.error(request,'username of password does not match')
+                return redirect('transfer:homepage')
 
 
             chrome_url = os.path.join(settings.BASE_DIR, 'transfer/static/transfer/chromium_driver/chromedriver.exe')
