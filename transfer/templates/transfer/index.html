@@ -23,13 +23,19 @@
         </script>
     {% endfor %}
 {% endif %}
- <form class="col-sm-6" method="Post" action="#">
+ <form class="col-sm-6" method="Post" action="#" onsubmit="return valid();">
         {% csrf_token %}
         <div class="form-group">
+            <label for="url">Choose JSON through:</label>
+            {{ transfer_form.path }}
+        </div>
+        <div class="form-group" id="pathurl">
             <label for="url">Url:</label>
             {{ transfer_form.url }}
-            <input type="file">
-            <button type="button" onclick="filepath();">Local JSON Path</button>
+        </div>
+        <div class="form-group" id="pathfile">
+            <label for="url">Upload JSON File:</label>
+            {{ transfer_form.file }}
         </div>
         <div class="form-group">
             <label for="database">Database:</label>
@@ -44,23 +50,68 @@
             {{ transfer_form.password }}
         </div>
         <div class="transfer-btn">
-            <button type="submit" class="btn btn-success" onclick="valid();">Transfer</button>
+            <button type="submit" class="btn btn-success">Transfer</button>
         </div>
     </form>
 <div class="loading" id="loading">Loading&#8230;</div>
  <script>
-    url = document.getElementById('url').value
-    username = document.getElementById('username').value
-    password = document.getElementById('password').value
+    window.onload =function(){
+        radio = document.getElementById('id_path_0');
+        radio1 = document.getElementById('id_path_1');
 
-    function valid(){
-        if(url != '' || username != ''){
-            loader();
-         }
+        function changes(){
+            if (document.getElementById('id_path_0').checked) {
+              document.getElementById('pathurl').style.display = "none";
+              document.getElementById('pathfile').style.display = "block";
+            }
+            if (document.getElementById('id_path_1').checked) {
+              document.getElementById('pathurl').style.display = "block";
+              document.getElementById('pathfile').style.display = "none";
+            }
+        }
+
+        radio.addEventListener("change",function(){changes()});
+        radio1.addEventListener("change",function(){changes()});
+
+        changes();
     }
 
-    function loader(){
+    function valid(){
+        url = document.getElementById('url').value;
+        username = document.getElementById('username').value;
+        password = document.getElementById('password').value;
+        file = document.getElementById('file').value;
+        db = document.getElementById('database');
+        database = db.options[db.selectedIndex].value;
+
         document.getElementById('loading').style.display = "block";
+
+        if (database == '0'){
+            document.getElementById('loading').style.display = "none";
+            alert('please choose database');
+            return false;
+        }
+        if (document.getElementById('id_path_1').checked) {
+            if(url == ''){
+                document.getElementById('loading').style.display = "none";
+                alert('please enter the required field: url');
+                return false;
+            }
+        }
+        if (document.getElementById('id_path_0').checked) {
+            if(file == ''){
+                document.getElementById('loading').style.display = "none";
+                alert('please upload the file');
+                return false;
+            }
+        }
+        if(username == ''){
+            document.getElementById('loading').style.display = "none";
+            alert('please enter the required field: username');
+            return false;
+         }
+
+        return true;
     }
 </script>
 </body>

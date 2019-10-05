@@ -6,13 +6,19 @@ class TransferForm(forms.Form):
         ('0', 'Please Choose Database')
     ]
 
+    INPUT_TYPE_CHOICE={
+        ('0','Url'),
+        ('1','Local File')
+    }
     for no,database in enumerate(settings.DATABASES):
         DATABASE_TYPE_CHOICE.append((database,settings.DATABASES[database]['NAME']))
 
-    url = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control','id':'url','placeholder':'http:// or https://'}))
+    path = forms.ChoiceField(widget=forms.RadioSelect,choices=INPUT_TYPE_CHOICE,initial='0')
+    url = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control','id':'url','placeholder':'http:// or https://'}),required=False)
+    file = forms.FileField(widget=forms.FileInput(attrs={'class':'form-control','id':'file'}),required=False)
     database = forms.ChoiceField(widget=forms.Select(attrs={'class':'form-control','id':'database'}),choices=DATABASE_TYPE_CHOICE,initial='0')
     username = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control','id':'username'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control','id':'password'}),required=False)
 
     class Meta:
-        fields = ['url']
+        fields = ['url','file','database','username','password']

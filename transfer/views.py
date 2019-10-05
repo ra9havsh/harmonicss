@@ -634,6 +634,50 @@ def cohort(cohort):
             # print("cohort table is filled...")
     return trace
 
+def transfer_url(request,url):
+    chrome_url = os.path.join(settings.BASE_DIR, 'transfer/static/transfer/chromium_driver/chromedriver.exe')
+    driver = webdriver.Chrome(chrome_url)
+
+    try:
+        driver.get(url)
+        element = WebDriverWait(driver, 50).until(
+            EC.presence_of_element_located((By.TAG_NAME, "pre"))
+        )
+
+        try:
+            pre_tag = driver.find_element_by_tag_name('pre')
+        except NoSuchElementException:
+            pre_tag = type('obj', (object,), {'text': ''})
+
+        data = pre_tag.text
+        results = json.loads(data)
+        print(results)
+        cohort_list = results["cohort"]["term-JA"]
+        personJA = results["person-JA"]
+
+        t = cohort(cohort_list)
+        tt = person_JA(personJA)
+
+        request.session['trace'] = ""
+
+        trace = request.session.get('trace')
+        if len(t) > 0:
+            trace = trace + t
+        else:
+            trace = trace + "no data in cohort"
+
+        if len(tt) > 0:
+            trace = trace + tt
+        else:
+            trace = trace + "no data in person-JA"
+
+        request.session['trace'] = trace
+        driver.quit()
+    except TimeoutException and WebDriverException:
+        return redirect("transfer:message", 'error')
+        driver.quit()
+
+    return redirect('transfer:message', 'success')
 
 def homepage(request):
     # file = os.path.join(settings.BASE_DIR, 'transfer/static/transfer/j5.json')
@@ -669,66 +713,22 @@ def homepage(request):
         database_name = request.POST.get('database')
         username = request.POST.get('username')
         password = request.POST.get('password')
-
+        file = request.POST.get('file')
+        path = request.POST.get('path')
 
         if transfer_form.is_valid and database_name is not '0':
 
             database = settings.DATABASES[database_name]
 
-            if database['PASSWORD'] is not password:
-                print(password)
-                print(database['PASSWORD'])
-
-
             if database['USER'] != username or database['PASSWORD'] != password:
                 messages.error(request,'username of password does not match')
                 return redirect('transfer:homepage')
 
+            if path is '0':
+                return transfer_url(request,url)
 
-            chrome_url = os.path.join(settings.BASE_DIR, 'transfer/static/transfer/chromium_driver/chromedriver.exe')
-            driver = webdriver.Chrome(chrome_url)
-
-            try:
-                driver.get(url)
-                element = WebDriverWait(driver, 50).until(
-                    EC.presence_of_element_located((By.TAG_NAME, "pre"))
-                )
-
-                try:
-                    pre_tag = driver.find_element_by_tag_name('pre')
-                except NoSuchElementException:
-                    pre_tag = type('obj', (object,), {'text' : ''})
-
-                data=pre_tag.text
-                results = json.loads(data)
-                print(results)
-                cohort_list=results["cohort"]["term-JA"]
-                personJA=results["person-JA"]
-
-                t = cohort(cohort_list)
-                tt = person_JA(personJA)
-
-                request.session['trace'] = ""
-
-                trace = request.session.get('trace')
-                if len(t) > 0:
-                    trace = trace + t
-                else:
-                    trace = trace + "no data in cohort"
-
-                if len(tt) > 0:
-                    trace = trace + tt
-                else:
-                    trace = trace + "no data in person-JA"
-
-                request.session['trace'] = trace
-                driver.quit()
-            except TimeoutException and WebDriverException:
-                return redirect("transfer:message",'error')
-                driver.quit()
-
-            return redirect('transfer:message','success')
-
+            if path is '1':
+                return transfer_url(request,file)
 
             # r = requests.get('https://private.harmonicss.eu/hcloud/remote.php/webdav/Harm-JSON/QMUL-2019-04-11-Dummy-Data-Harmonization.json')
             # r = requests.get('j.json')
