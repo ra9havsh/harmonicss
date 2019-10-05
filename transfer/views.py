@@ -8,6 +8,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.common.exceptions import WebDriverException
 from selenium.common.exceptions import NoSuchElementException
 from django.conf import settings
+from django.core.files.storage import FileSystemStorage
 from django.contrib import messages
 import json
 import os
@@ -679,6 +680,44 @@ def transfer_url(request,url):
 
     return redirect('transfer:message', 'success')
 
+def transfer_file(request,file_name):
+    try:
+        file = settings.BASE_DIR+file_name
+        json_file = open(file)
+        results = json.load(json_file)
+        json_file.close()
+        fs = FileSystemStorage()
+
+        if fs.exists(file):
+            fs.delete(file)
+
+        cohort_list=results["cohort"]["term-JA"]
+        personJA=results["person-JA"]
+
+        t = cohort(cohort_list)
+        tt = person_JA(personJA)
+
+        request.session['trace'] = ""
+
+        trace = request.session.get('trace')
+        if len(t) > 0:
+            trace = trace + t
+        else:
+            trace = trace + "no data in cohort"
+
+        if len(tt) > 0:
+            trace = trace + tt
+        else:
+            trace = trace + "no data in person-JA"
+
+        request.session['trace'] = trace
+
+        return redirect('transfer:message', 'success')
+    except FileNotFoundError:
+        return redirect("transfer:message", 'error')
+
+    return redirect('transfer:message', 'success')
+
 def homepage(request):
     # file = os.path.join(settings.BASE_DIR, 'transfer/static/transfer/j5.json')
     # json_file = open(file)
@@ -708,12 +747,11 @@ def homepage(request):
     # return redirect('transfer:message', 'success')
 
     if request.method=="POST":
-        transfer_form= TransferForm(request.POST)
+        transfer_form= TransferForm(request.POST,request.FILES)
         url = request.POST.get('url')
         database_name = request.POST.get('database')
         username = request.POST.get('username')
         password = request.POST.get('password')
-        file = request.POST.get('file')
         path = request.POST.get('path')
 
         if transfer_form.is_valid and database_name is not '0':
@@ -727,18 +765,12 @@ def homepage(request):
             if path is '0':
                 return transfer_url(request,url)
 
-            if path is '1':
-                return transfer_url(request,file)
-
-            # r = requests.get('https://private.harmonicss.eu/hcloud/remote.php/webdav/Harm-JSON/QMUL-2019-04-11-Dummy-Data-Harmonization.json')
-            # r = requests.get('j.json')
-            # results = r.json()
-
-            # file = os.path.join(settings.BASE_DIR, 'transfer/static/transfer/j.json')
-            # json_file = open(file)
-            # results = json.load(json_file)
-            # json_file.close()
-            # print(results)
+            if path is '1' and request.FILES['file']:
+                file = request.FILES['file']
+                fs = FileSystemStorage()
+                filename = fs.save(file.name, file)
+                uploaded_file_url = fs.url(filename)
+                return transfer_file(request,uploaded_file_url)
     else:
         transfer_form = TransferForm()
 
@@ -752,6 +784,6 @@ def transfer(request,msg):
         request.session['trace'] = ""
         return render(request, 'transfer/transfer.html', {'success': 'Data Tranferred successfully.....','trace':trace})
     elif str(msg)=='error':
-        return render(request, 'transfer/transfer.html', {'error': 'Sorry time out exception occurred, or there may be something wrong'})
+        return render(request, 'transfer/transfer.html', {'error': 'Sorry time out exception occurred, or file is not found'})
     else:
         return render(request, 'transfer/transfer.html')

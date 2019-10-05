@@ -7,8 +7,8 @@ class TransferForm(forms.Form):
     ]
 
     INPUT_TYPE_CHOICE={
-        ('0','Url'),
-        ('1','Local File')
+        ('1','Local File'),
+        ('0','Url')
     }
     for no,database in enumerate(settings.DATABASES):
         DATABASE_TYPE_CHOICE.append((database,settings.DATABASES[database]['NAME']))

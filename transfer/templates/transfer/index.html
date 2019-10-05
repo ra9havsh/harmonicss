@@ -23,7 +23,7 @@
         </script>
     {% endfor %}
 {% endif %}
- <form class="col-sm-6" method="Post" action="#" onsubmit="return valid();">
+ <form class="col-sm-6" method="Post" action="#" onsubmit="return valid();" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-group">
             <label for="url">Choose JSON through:</label>
@@ -61,12 +61,22 @@
 
         function changes(){
             if (document.getElementById('id_path_0').checked) {
-              document.getElementById('pathurl').style.display = "none";
-              document.getElementById('pathfile').style.display = "block";
+                if(document.getElementById('id_path_0').value=='0'){
+                  document.getElementById('pathurl').style.display = "block";
+                  document.getElementById('pathfile').style.display = "none";
+                }else{
+                  document.getElementById('pathurl').style.display = "none";
+                  document.getElementById('pathfile').style.display = "block";
+                }
             }
             if (document.getElementById('id_path_1').checked) {
-              document.getElementById('pathurl').style.display = "block";
-              document.getElementById('pathfile').style.display = "none";
+              if(document.getElementById('id_path_1').value=='0'){
+                  document.getElementById('pathurl').style.display = "block";
+                  document.getElementById('pathfile').style.display = "none";
+                }else{
+                  document.getElementById('pathurl').style.display = "none";
+                  document.getElementById('pathfile').style.display = "block";
+                }
             }
         }
 
@@ -91,19 +101,37 @@
             alert('please choose database');
             return false;
         }
-        if (document.getElementById('id_path_1').checked) {
-            if(url == ''){
-                document.getElementById('loading').style.display = "none";
-                alert('please enter the required field: url');
-                return false;
-            }
-        }
         if (document.getElementById('id_path_0').checked) {
-            if(file == ''){
-                document.getElementById('loading').style.display = "none";
-                alert('please upload the file');
-                return false;
-            }
+             if (document.getElementById('id_path_0').value=='0') {
+                if(url == ''){
+                    document.getElementById('loading').style.display = "none";
+                    alert('please enter the field Url');
+                    return false;
+                }
+             }
+             if (document.getElementById('id_path_0').value=='1') {
+                if(file == ''){
+                    document.getElementById('loading').style.display = "none";
+                    alert('please upload file');
+                    return false;
+                }
+              }
+        }
+        if (document.getElementById('id_path_1').checked) {
+            if (document.getElementById('id_path_1').value=='0') {
+                if(url == ''){
+                    document.getElementById('loading').style.display = "none";
+                    alert('please enter the field Url');
+                    return false;
+                }
+             }
+             if (document.getElementById('id_path_1').value=='1') {
+                if(file == ''){
+                    document.getElementById('loading').style.display = "none";
+                    alert('please upload file');
+                    return false;
+                }
+              }
         }
         if(username == ''){
             document.getElementById('loading').style.display = "none";
